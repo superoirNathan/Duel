@@ -1,0 +1,92 @@
+﻿  animation.cpp
+animation.cpp(7): warning C4018: '<': signed/unsigned mismatch
+  controller.cpp
+controller.cpp(180): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
+controller.cpp(181): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
+  Game.cpp
+Game.cpp(390): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(398): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(400): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(441): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+Game.cpp(469): warning C4018: '<=': signed/unsigned mismatch
+Game.cpp(478): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(596): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(632): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(643): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(725): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(733): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(766): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(775): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(776): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(786): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(801): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(832): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(834): warning C4018: '<': signed/unsigned mismatch
+  GameObject.cpp
+GameObject.cpp(40): warning C4018: '<': signed/unsigned mismatch
+GameObject.cpp(93): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+GameObject.cpp(98): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+GameObject.cpp(110): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+GameObject.cpp(115): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+GameObject.cpp(136): warning C4018: '<': signed/unsigned mismatch
+GameObject.cpp(259): warning C4018: '<': signed/unsigned mismatch
+  HTRLoader.cpp
+HTRLoader.cpp(92): warning C4018: '<': signed/unsigned mismatch
+HTRLoader.cpp(107): warning C4018: '<': signed/unsigned mismatch
+HTRLoader.cpp(129): warning C4018: '<': signed/unsigned mismatch
+HTRLoader.cpp(229): warning C4305: '=': truncation from 'double' to 'float'
+HTRLoader.cpp(355): warning C4018: '<': signed/unsigned mismatch
+HTRLoader.cpp(394): warning C4018: '<': signed/unsigned mismatch
+  tinyxml2.cpp
+  Light.cpp
+  Main.cpp
+  Material.cpp
+  Mesh.cpp
+Mesh.cpp(1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+  Mesh.cpp(1): note: command-line arguments:  see previous definition of '_CRT_SECURE_NO_WARNINGS'
+  ParticleEmitter.cpp
+ParticleEmitter.cpp(123): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+ParticleEmitter.cpp(145): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+ParticleEmitter.cpp(169): warning C4305: 'argument': truncation from 'double' to 'float'
+ParticleEmitter.cpp(239): warning C4018: '<=': signed/unsigned mismatch
+  PlayerObject.cpp
+PlayerObject.cpp(32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+PlayerObject.cpp(33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+PlayerObject.cpp(38): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+PlayerObject.cpp(39): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+PlayerObject.cpp(50): warning C4018: '<': signed/unsigned mismatch
+PlayerObject.cpp(56): warning C4018: '<': signed/unsigned mismatch
+  ShaderProgram.cpp
+  SkinnedGameObject.cpp
+SkinnedGameObject.cpp(37): warning C4018: '<': signed/unsigned mismatch
+SkinnedGameObject.cpp(73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+SkinnedGameObject.cpp(74): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+SkinnedGameObject.cpp(76): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+SkinnedGameObject.cpp(107): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+SkinnedGameObject.cpp(166): warning C4018: '<': signed/unsigned mismatch
+SkinnedGameObject.cpp(196): warning C4018: '<': signed/unsigned mismatch
+SkinnedGameObject.cpp(223): warning C4018: '<': signed/unsigned mismatch
+SkinnedGameObject.cpp(299): warning C4018: '<': signed/unsigned mismatch
+SkinnedGameObject.cpp(310): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+SkinnedGameObject.cpp(315): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+SkinnedGameObject.cpp(337): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+SkinnedGameObject.cpp(340): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+SkinnedGameObject.cpp(355): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+SkinnedGameObject.cpp(358): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+SkinnedGameObject.cpp(360): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+SkinnedGameObject.cpp(399): warning C4018: '<': signed/unsigned mismatch
+SkinnedGameObject.cpp(405): warning C4018: '<': signed/unsigned mismatch
+  SoundSystem.cpp
+  Texture.cpp
+  Timer.cpp
+Timer.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Timer.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+c:\users\100523109\desktop\duel\project1\htrloader.cpp(263): warning C4715: 'HTRLoader::processHeader': not all control paths return a value
+c:\users\100523109\desktop\duel\project1\htrloader.cpp(348): warning C4715: 'HTRLoader::processBasePositionSection': not all control paths return a value
+  1765 of 1792 functions (98.5%) were compiled, the rest were copied from previous compilation.
+    8 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Project1.vcxproj -> C:\Users\100523109\Desktop\Duel\Release\Game_Project.exe
