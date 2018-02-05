@@ -1,0 +1,123 @@
+﻿  Timer.cpp
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\timer.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\timer.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Texture.cpp
+  SoundSystem.cpp
+  ShaderProgram.cpp
+  PlayerObject.cpp
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\playerobject.cpp(32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\playerobject.cpp(33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\playerobject.cpp(38): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\playerobject.cpp(39): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  ParticleEmitter.cpp
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\particleemitter.cpp(123): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\particleemitter.cpp(145): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\particleemitter.cpp(169): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\particleemitter.cpp(239): warning C4018: '<=': signed/unsigned mismatch
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\keyframecontroller.h(97): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\keyframecontroller.h(42): note: while compiling class template member function 'void KeyframeController<glm::vec3>::calculateLookupTable(int)'
+  c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\particleemitter.cpp(77): note: see reference to function template instantiation 'void KeyframeController<glm::vec3>::calculateLookupTable(int)' being compiled
+  c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\particleemitter.h(125): note: see reference to class template instantiation 'KeyframeController<glm::vec3>' being compiled
+  Mesh.cpp
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\mesh.cpp(170): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+  Material.cpp
+  Main.cpp
+  Light.cpp
+  GameObject.cpp
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\gameobject.cpp(122): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\gameobject.cpp(127): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\gameobject.cpp(139): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\gameobject.cpp(144): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Game.cpp
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\game.cpp(440): warning C4018: '<': signed/unsigned mismatch
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\game.cpp(482): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\game.cpp(882): warning C4018: '<': signed/unsigned mismatch
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\game.cpp(1008): warning C4018: '<': signed/unsigned mismatch
+  controller.cpp
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\controller.cpp(180): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
+c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\controller.cpp(181): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
+  animation.cpp
+  Generating Code...
+animation.obj : error LNK2001: unresolved external symbol __imp___glewBindBuffer
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewBindBuffer
+animation.obj : error LNK2001: unresolved external symbol __imp___glewEnableVertexAttribArray
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewEnableVertexAttribArray
+animation.obj : error LNK2001: unresolved external symbol __imp___glewVertexAttribPointer
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewVertexAttribPointer
+animation.obj : error LNK2001: unresolved external symbol __imp___glewBindVertexArray
+GameObject.obj : error LNK2001: unresolved external symbol __imp___glewBindVertexArray
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewBindVertexArray
+controller.obj : error LNK2019: unresolved external symbol XInputGetState referenced in function "public: bool __cdecl Input::XBoxInput::DownloadPackets(unsigned int)" (?DownloadPackets@XBoxInput@Input@@QEAA_NI@Z)
+controller.obj : error LNK2019: unresolved external symbol XInputSetState referenced in function "public: __cdecl Input::XBoxInput::XBoxInput(void)" (??0XBoxInput@Input@@QEAA@XZ)
+Game.obj : error LNK2019: unresolved external symbol __imp_glutSwapBuffers referenced in function "public: void __cdecl Game::draw(void)" (?draw@Game@@QEAAXXZ)
+Game.obj : error LNK2019: unresolved external symbol FMOD_System_Create referenced in function "enum FMOD_RESULT __cdecl FMOD::System_Create(class FMOD::System * *)" (?System_Create@FMOD@@YA?AW4FMOD_RESULT@@PEAPEAVSystem@1@@Z)
+SoundSystem.obj : error LNK2001: unresolved external symbol FMOD_System_Create
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::getNumDrivers(int *)" (?getNumDrivers@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEAH@Z) referenced in function "public: void __cdecl Game::initializeGame(void)" (?initializeGame@Game@@QEAAXXZ)
+SoundSystem.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::getNumDrivers(int *)" (?getNumDrivers@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEAH@Z)
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::init(int,unsigned int,void *)" (?init@System@FMOD@@QEAA?AW4FMOD_RESULT@@HIPEAX@Z) referenced in function "public: void __cdecl Game::initializeGame(void)" (?initializeGame@Game@@QEAAXXZ)
+SoundSystem.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::init(int,unsigned int,void *)" (?init@System@FMOD@@QEAA?AW4FMOD_RESULT@@HIPEAX@Z)
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::update(void)" (?update@System@FMOD@@QEAA?AW4FMOD_RESULT@@XZ) referenced in function "public: void __cdecl Game::initializeGame(void)" (?initializeGame@Game@@QEAAXXZ)
+SoundSystem.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::update(void)" (?update@System@FMOD@@QEAA?AW4FMOD_RESULT@@XZ)
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::createSound(char const *,unsigned int,struct FMOD_CREATESOUNDEXINFO *,class FMOD::Sound * *)" (?createSound@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEBDIPEAUFMOD_CREATESOUNDEXINFO@@PEAPEAVSound@2@@Z) referenced in function "public: void __cdecl Game::initializeGame(void)" (?initializeGame@Game@@QEAAXXZ)
+SoundSystem.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::createSound(char const *,unsigned int,struct FMOD_CREATESOUNDEXINFO *,class FMOD::Sound * *)" (?createSound@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEBDIPEAUFMOD_CREATESOUNDEXINFO@@PEAPEAVSound@2@@Z)
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::playSound(class FMOD::Sound *,class FMOD::ChannelGroup *,bool,class FMOD::Channel * *)" (?playSound@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEAVSound@2@PEAVChannelGroup@2@_NPEAPEAVChannel@2@@Z) referenced in function "public: void __cdecl Game::keyboardDown(unsigned char,int,int)" (?keyboardDown@Game@@QEAAXEHH@Z)
+SoundSystem.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::playSound(class FMOD::Sound *,class FMOD::ChannelGroup *,bool,class FMOD::Channel * *)" (?playSound@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEAVSound@2@PEAVChannelGroup@2@_NPEAPEAVChannel@2@@Z)
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::Sound::setMode(unsigned int)" (?setMode@Sound@FMOD@@QEAA?AW4FMOD_RESULT@@I@Z) referenced in function "public: void __cdecl Game::initializeGame(void)" (?initializeGame@Game@@QEAAXXZ)
+SoundSystem.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::Sound::setMode(unsigned int)" (?setMode@Sound@FMOD@@QEAA?AW4FMOD_RESULT@@I@Z)
+GameObject.obj : error LNK2001: unresolved external symbol __imp___glewActiveTexture
+Main.obj : error LNK2019: unresolved external symbol __imp_glewInit referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowPosition referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowSize referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutInitDisplayMode referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutMainLoop referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutPostRedisplay referenced in function "void __cdecl TimerCallbackFunction(int)" (?TimerCallbackFunction@@YAXH@Z)
+Main.obj : error LNK2019: unresolved external symbol __imp_glutTimerFunc referenced in function "void __cdecl TimerCallbackFunction(int)" (?TimerCallbackFunction@@YAXH@Z)
+Main.obj : error LNK2019: unresolved external symbol __imp_glutKeyboardFunc referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutDisplayFunc referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutMouseFunc referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutMotionFunc referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutKeyboardUpFunc referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp___glutInitWithExit referenced in function glutInit_ATEXIT_HACK
+Main.obj : error LNK2019: unresolved external symbol __imp___glutCreateWindowWithExit referenced in function glutCreateWindow_ATEXIT_HACK
+Main.obj : error LNK2019: unresolved external symbol __imp_glutInitContextVersion referenced in function main
+Main.obj : error LNK2001: unresolved external symbol __imp_glewExperimental
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewBufferData
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewDeleteBuffers
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewGenBuffers
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewDeleteVertexArrays
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewGenVertexArrays
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewAttachShader
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewBindAttribLocation
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewCompileShader
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewCreateProgram
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewCreateShader
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewDeleteProgram
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewDeleteShader
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewDetachShader
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewGetAttribLocation
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewGetProgramInfoLog
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewGetProgramiv
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewGetShaderInfoLog
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewGetShaderiv
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewGetUniformLocation
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewLinkProgram
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewShaderSource
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUniform1f
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUniform1i
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUniform2f
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUniform3f
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUniform4f
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUniformMatrix3fv
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUniformMatrix4fv
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUseProgram
+ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUniform1ui
+SoundSystem.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::Sound::release(void)" (?release@Sound@FMOD@@QEAA?AW4FMOD_RESULT@@XZ) referenced in function "public: void __cdecl SoundSystem::releaseSound(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?releaseSound@SoundSystem@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+SoundSystem.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::Sound::setLoopCount(int)" (?setLoopCount@Sound@FMOD@@QEAA?AW4FMOD_RESULT@@H@Z) referenced in function "public: void __cdecl SoundSystem::playSound(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool)" (?playSound@SoundSystem@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z)
+Texture.obj : error LNK2019: unresolved external symbol SOIL_load_OGL_texture referenced in function "public: bool __cdecl Texture::load(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?load@Texture@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Texture.obj : error LNK2019: unresolved external symbol SOIL_last_result referenced in function "public: bool __cdecl Texture::load(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?load@Texture@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Timer.obj : error LNK2019: unresolved external symbol __imp_glutGet referenced in function "public: __cdecl Timer::Timer(void)" (??0Timer@@QEAA@XZ)
+C:\Users\100619082\Desktop\DuelV1.2.9\DuelV1.2.9\Project1\lib\glew32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\100619082\Desktop\DuelV1.2.9\DuelV1.2.9\Project1\lib\SOIL_ext.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\100619082\Desktop\DuelV1.2.9\DuelV1.2.9\Project1\lib\Xinput9_1_0.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\100619082\Desktop\DuelV1.2.9\DuelV1.2.9\Project1\lib\freeglut.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\100619082\Desktop\DuelV1.2.9\DuelV1.2.9\x64\Debug\Game_Project.exe : fatal error LNK1120: 66 unresolved externals

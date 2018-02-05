@@ -11,13 +11,11 @@
 #include "animationMath.h"
 #include "SkinnedGameObject.h"
 
-
 FMOD::Channel *channel1 = nullptr;
 FMOD::Channel *channel2 = nullptr;
 FMOD::Sound *sound1 = nullptr;
 FMOD::Sound *sound2 = nullptr;
 FMOD::System *System;
-
 
 Game::Game()
 {
@@ -37,11 +35,10 @@ void Game::initializeGame()
 
 	glEnable(GL_DEPTH_TEST);
 
-   
 	//FMOD
 	std::string sounds[3] = {
 		"sound1",
-		"sound2",   
+		"sound2",
 		"sound3"
 	};
 	if (FMOD::System_Create(&System) != FMOD_OK)
@@ -71,7 +68,7 @@ void Game::initializeGame()
 
 	//lights
 	Light light1, light2;
-	light1.positionOrDirection = glm::vec4(0.f, 10.f, 10.f, 1.f);
+	light1.positionOrDirection = glm::vec4(0.f, 30.f, 0.f, 1.f);
 	light1.originalPosition = glm::vec4(0.f, 4.f, 0.f, 1.f);
 	light1.ambient = glm::vec3(0.05f, 0.05f, 0.05f);
 	light1.diffuse = glm::vec3(168.f / 255.f, 148.f / 255.f, 87.f / 255.f);
@@ -127,11 +124,14 @@ void Game::initializeGame()
 		system("pause");
 		exit(0);
 	}
+	if (!UI.load("shaders/Phong.vert", "shaders/UI.frag"))
+	{
+		std::cout << "UI shader failed to initalize" << std::endl;
+		system("pause");
+		exit(0);
+	}
 	//______________________________________________________________________________KNIGHT MESH ANIMATION 1 MESH INTIALIZE______________________________________________________________________________
-	
-
-    
-    std::shared_ptr<Mesh> knight1Walk_1 = std::make_shared<Mesh>();
+	std::shared_ptr<Mesh> knight1Walk_1 = std::make_shared<Mesh>();
 	if (!knight1Walk_1->loadFromFile("meshes/knight5.2_000001.obj")) {
 		std::cout << "Cube 1 Model fail to load. " << std::endl;
 		system("pause");
@@ -247,9 +247,23 @@ void Game::initializeGame()
         system("pause");
         exit(0);
     }
+	//______________________________________________________________________________UI OBJECT INITIALIZE______________________________________________________________________________
+	std::shared_ptr<Mesh> UIObj = std::make_shared<Mesh>();
+	if (!UIObj->loadFromFile("meshes/Wins.obj"))
+	{
+		std::cout << "UI Object failed to load" << std::endl;
+		system("pause");
+		exit(0);
+	}
+	//______________________________________________________________________________SHIELD INITIALIZE______________________________________________________________________________
+	std::shared_ptr<Mesh> ShieldObj = std::make_shared<Mesh>();
+	if (!ShieldObj->loadFromFile("meshes/Shield.obj"))
+	{
+		std::cout << "Shield Object failed to load" << std::endl;
+		system("pause");
+		exit(0);
+	}
     //______________________________________________________________________________Skin Meshing__________________________________________________________________________________________________
-
-
     std::shared_ptr<Mesh> SkinnedMesh = std::make_shared<Mesh>();;
     std::string animationPath = "animations/";
     std::string modelsPath = "meshes/";
@@ -259,9 +273,8 @@ void Game::initializeGame()
         system("pause");
         exit(0);
     }
-   // mesh->loadFromFile(modelsPath + "guy.obj");
+    // mesh->loadFromFile(modelsPath + "guy.obj");
 
-    
 	//--- @CUBE INITIALIZE ---//	
 	knight1Animation.animation.keyFrames.push_back(knight1Walk_1);
 	knight1Animation.animation.keyFrames.push_back(knight1Walk_2);
@@ -270,12 +283,15 @@ void Game::initializeGame()
 	knight1Animation.animation.keyFrames.push_back(knight1Walk_5);
 	knight1Animation.animation.keyFrames.push_back(knight1Walk_6);
 
+	// -------------------------------------------- KNIGHT_1 ANIMATION INITIALIZE --------------------------------------------
 	knight1Animation.animation.initialize();
 	knight1Animation.loadTexture(TextureType::Diffuse, "textures/KnightV5.png");
 	knight1Animation.loadTexture(TextureType::Specular, "textures/noSpecular.png");
-	knight1Animation.position = glm::vec3(0.f, 2.0f, 2.0f);
+	knight1Animation.position = glm::vec3(-8.f, 0.0f, 0.0f);
 	knight1Animation.scale = 0.2f;
-	knight1Animation.translate = glm::translate(knight1Animation.translate, glm::vec3(0.f, 3.25f, -11.f));
+	knight1Animation.translate = glm::translate(knight1Animation.translate, knight1Animation.position);
+	knight1Animation.localRotation = 1.5708f; //This is 90 degrees in radians
+	knight1Animation.rotate = glm::rotate(glm::mat4(), knight1Animation.localRotation, glm::vec3(0.f, 1.f, 0.f));
 
 	// -------------------------------------------- KNIGHT_1 INITIALIZE --------------------------------------------
 	knight1 = GameObject(knight); //set the object to and OBJ 
@@ -283,8 +299,23 @@ void Game::initializeGame()
 	knight1.loadTexture(TextureType::Specular, "textures/noSpecular.png");
 	knight1.position = glm::vec3(-8.f, 0.0f, 0.0f);
 	knight1.translate = glm::translate(knight1.translate, knight1.position); //set position of object
-	knight1Animation.localRotation = -1.5708f; //This is 90 degrees in radians
-	knight1.rotate = glm::rotate(knight1.rotate, knight1Animation.localRotation, glm::vec3(0.f, 1.f, 0.f));
+	knight1.localRotation = 1.5708f; //This is 90 degrees in radians
+	knight1.rotate = glm::rotate(glm::mat4(), knight1Animation.localRotation, glm::vec3(0.f, 1.f, 0.f));
+	knight1.Radius = 1; //USE FOR CIRCLE COLLISIONS
+	knight1.OppAngle = glm::pi<float>();
+
+	// -------------------------------------------- SHIELD INITIALIZE --------------------------------------------
+	P1.Shield = GameObject(ShieldObj);
+	P1.Shield.loadTexture(TextureType::Diffuse, "textures/jonWShieldTexture.png");
+	P1.Shield.position = knight1.position;
+	P1.Shield.translate = glm::translate(glm::mat4(), P1.Shield.position);
+	P1.Shield.Radius = 1.4f;
+
+	P2.Shield = GameObject(ShieldObj);
+	P2.Shield.loadTexture(TextureType::Diffuse, "textures/jonWShieldTexture.png");
+	P2.Shield.position = knight1.position;
+	P2.Shield.translate = glm::translate(glm::mat4(), P2.Shield.position);
+	P2.Shield.Radius = 1.4f;
 
 	// -------------------------------------------- KNIGHT_2 INITIALIZE --------------------------------------------
 	knight2 = GameObject(knight); //set the object to and OBJ 
@@ -292,12 +323,15 @@ void Game::initializeGame()
 	knight2.loadTexture(TextureType::Specular, "textures/noSpecular.png");
 	knight2.position = glm::vec3(8.f, 0.0f, 0.0f);
 	knight2.translate = glm::translate(knight2.translate, knight2.position); //set position of object
-	knight2.localRotation = -1.5708f; //This is 90 degrees in radians
-	knight2.rotate = glm::rotate(knight2.rotate, knight2.localRotation, glm::vec3(0.f, 1.f, 0.f));
+	knight2.localRotation = 1.5708f; //This is 90 degrees in radians
+	knight2.rotate = glm::rotate(glm::mat4(), knight2.localRotation, glm::vec3(0.f, 1.f, 0.f));
+	knight2.Radius = 1; //USE FOR CIRCLE COLLISIONS
+	knight2.OppAngle = 0.f;
 
 	// -------------------------------------------- BULLET INITIALIZE --------------------------------------------
 	bulletTemplate.mesh = Bullet;
 	bulletTemplate.loadTexture(TextureType::Specular, "textures/fullSpecular.png");
+
 	p1Bullets.push_back(new GameObject(bulletTemplate));
 	p1Bullets.push_back(new GameObject(bulletTemplate));
 	p1Bullets.push_back(new GameObject(bulletTemplate));
@@ -364,10 +398,52 @@ void Game::initializeGame()
     emitterBase.mesh = partObj;
     emitterBase.loadTexture(TextureType::Specular, "textures/FullSpecular.png");
     emitterBase.loadTexture(TextureType::Diffuse, "textures/blue.png");
+    emitterBase.loadTexture(TextureType::Specular, "textures/noSpecular.png");
     emitterBase.localRotation = 1.5708f;
     emitterBase.rotate = glm::rotate(knight1.rotate, emitterBase.localRotation, glm::vec3(0.f, 0.f, 1.f));
     emitterBase.scale = 0.1f;
-	//--------------------------------------------Skin Mesh Initialize----------------------------------------------------
+	// -------------------------------------------- P1Wins INITIALIZE --------------------------------------------
+	P1RoundWins.mesh = UIObj;
+	P1RoundWins.loadTexture(TextureType::Diffuse, "textures/P1Wins.png");
+	P1RoundWins.rotate = glm::rotate(P1RoundWins.rotate, 1.5708f, glm::vec3(0.f, 1.f, 0.f));
+	P1RoundWins.translate = glm::translate(P1RoundWins.translate, glm::vec3(-9.f, 0.f, 8.f));
+	P1RoundWins.scale = 0.5f;
+
+	int numbOfWins = 5;
+	for (int i = 0; i <= numbOfWins; i++)
+	{
+		UIP1Wins.push_back(new GameObject(P1RoundWins));
+
+	}
+
+	UIP1Wins[1]->loadTexture(TextureType::Diffuse, "textures/P1W1.png");
+	UIP1Wins[2]->loadTexture(TextureType::Diffuse, "textures/P1W2.png");
+	UIP1Wins[3]->loadTexture(TextureType::Diffuse, "textures/P1W3.png");
+	UIP1Wins[4]->loadTexture(TextureType::Diffuse, "textures/P1W4.png");
+	UIP1Wins[5]->loadTexture(TextureType::Diffuse, "textures/P1W5.png");
+
+
+	// -------------------------------------------- P2Wins INITIALIZE --------------------------------------------
+	P2RoundWins.mesh = UIObj;
+	P2RoundWins.loadTexture(TextureType::Diffuse, "textures/P2Wins.png");
+	//P2RoundWins.loadTexture(TextureType::Specular, "textures/noSpecular.png");
+	P2RoundWins.rotate = glm::rotate(P2RoundWins.rotate, 1.5708f, glm::vec3(0.f, 1.f, 0.f));
+	P2RoundWins.translate = glm::translate(P2RoundWins.translate, glm::vec3(9.f, 0.f, 8.f));
+	P2RoundWins.scale = 0.5f;
+
+
+	for (int i = 0; i <= numbOfWins; i++)
+	{
+		UIP2Wins.push_back(new GameObject(P2RoundWins));
+	}
+
+	UIP2Wins[1]->loadTexture(TextureType::Diffuse, "textures/P2W1.png");
+	UIP2Wins[2]->loadTexture(TextureType::Diffuse, "textures/P2W2.png");
+	UIP2Wins[3]->loadTexture(TextureType::Diffuse, "textures/P2W3.png");
+	UIP2Wins[4]->loadTexture(TextureType::Diffuse, "textures/P2W4.png");
+	UIP2Wins[5]->loadTexture(TextureType::Diffuse, "textures/P2W5.png");
+
+    //--------------------------------------------Skin Mesh Initialize----------------------------------------------------
     skinnedGameObject1.name = "root";
 
     skinnedGameObject1.mesh = SkinnedMesh;
@@ -378,8 +454,15 @@ void Game::initializeGame()
     skinnedGameObject1.rotate = glm::rotate(knight1.rotate, emitterBase.localRotation, glm::vec3(0.f, 0.f, 1.f));
 
     skinnedGameObject1.initializeSkeletonFromHTR(animationPath + "jab.HTR", animationPath + "guy_weights.xml", skinnedGameObject1.mesh);
-    skinnedGameObject1.setLocalScale(glm::vec3(0.05f));
-    skinnedGameObject1.transform = emitterBase.translate * emitterBase.rotate * glm::scale(glm::mat4(), glm::vec3(emitterBase.scale));
+    skinnedGameObject1.setLocalScale(glm::vec3(1.0f));
+    skinnedGameObject1.setScaleFloat(0.01f);
+
+
+    std::cout << " NNN " << skinnedGameObject1.getScaleFloat() << std::endl;
+
+
+    //skinnedGameObject1.transform = emitterBase.translate * emitterBase.rotate * glm::scale(glm::mat4(), glm::vec3(emitterBase.scale));
+    skinnedGameObject1.transform = glm::translate(monkeyHeadLeft.transform, glm::vec3(-10.f,0.0f,0.0f) );
 
 
 
@@ -410,9 +493,9 @@ void Game::initializeGame()
 
 
 	// -------------------------------------------- CAMERA INITIALIZE --------------------------------------------
-	cameraTransform = glm::rotate(cameraTransform, 1.5f, glm::vec3(1.0f, 0.f, 0.f)) * glm::translate(cameraTransform, glm::vec3(0.f, -18.f, -2.f)); // camera position/rotation
+	cameraTransform = glm::rotate(cameraTransform, 1.55f, glm::vec3(1.0f, 0.f, 0.f)) * glm::translate(cameraTransform, glm::vec3(0.f, -18.f, -2.f)); // camera position/rotation
 	cameraProjection = glm::perspective(45.f, (float)WINDOW_WIDTH / (float)WINDOW_HEIGHT, 0.1f, 10000.f); // camera perspective, 0.1 for near plane, 10000 for far plane
-	//glm::mat4 cameraProjOrtho = glm::ortho(-16, 16, -8, 8); // Later for UI
+	cameraProjOrtho = glm::ortho(-15.0f, 15.0f, -8.0f, 7.0f, -100.0f, 100.0f);
 }
 void rotatePlayer(std::string objRot, int radian, glm::vec3 axis)
 {
@@ -424,16 +507,14 @@ float timer = 0;
 //Happens once per fram, used to update state of the game
 void Game::update()
 {
+
 	updateTime->tick();
 	float deltaTime = updateTime->getElapsedTimeSeconds();
-	//std::cout << knight1.position.x << " || " << knight1.position.z << std::endl;
-	//std::cout << (knight1.transform * glm::vec4(0.0f, 0.0f, 0.0f, 1.0f)).x << " || " << (knight1.transform * glm::vec4(0.0f, 0.0f, 0.0f, 1.0f)).z << std::endl;
-	//std::cout << P1.Bullet1BounceNum << std::endl;
+
 	if (doDeCast)
 	{
 		//update timer so we have correct delta time since last update	
 		timer += deltaTime;
-		//std::cout << timer << std::endl;
 		if (timer > 1) {
 
 			if (splineCounter <= 0) //0 will play once
@@ -494,26 +575,30 @@ void Game::update()
 
 		knight1.Movement(lStick1);
 
-		// -------------------------------------------- LEFT THUMB STICK PLAYER 2 --------------------------------------------
-		Input::Stick lStick2, rStick2;
-		XBoxController.GetSticks(1, lStick2, rStick2);
-		
-		knight2.Movement(lStick2);
-
 		knight1Animation.translate = knight1.translate;
+		knight1Animation.rotate = knight1.rotate;
+
+		P1.Shield.translate = knight1.translate;
+		P1.Shield.rotate = glm::rotate(knight1.rotate, glm::pi<float>(), glm::vec3(0.0f, 1.0f, 0.0f));
+		
 		// -------------------------------------------- RIGHT THUMB STICK PLAYER 1 --------------------------------------------
+		// Get Opposite Angle Player 1 is facing (for shield hit detection)
+		if ( ((glm::atan(rStick1.yAxis, rStick1.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) >= 0 )
+			knight1.OppAngle = ((glm::atan(rStick1.yAxis, rStick1.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) - glm::pi<float>();
+		else if ( ((glm::atan(rStick1.yAxis, rStick1.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) < 0 )
+			knight1.OppAngle = ((glm::atan(rStick1.yAxis, rStick1.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) + glm::pi<float>();
+
+		// Dead Zone Check
 		if (sqrt(rStick1.yAxis*rStick1.yAxis + rStick1.xAxis*rStick1.xAxis) > 0.1f) // DeadZone 10%
 		{
-			knight1Animation.rotate = glm::rotate(glm::mat4(), ((glm::atan(rStick1.yAxis, rStick1.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) + (float(1.5708)), glm::vec3(0.f, 1.f, 0.f));
-			knight1Animation.localRotation = ((glm::atan(rStick1.yAxis, rStick1.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) + (-float(1.5708)); // Update local rotation for bullet
-		}
-		// -------------------------------------------- RIGHT THUMB STICK PLAYER 2 --------------------------------------------
-		if (sqrt(rStick2.yAxis*rStick2.yAxis + rStick2.xAxis*rStick2.xAxis) > 0.1f) // DeadZone 10%
-		{
-			knight2.rotate = glm::rotate(glm::mat4(), ((glm::atan(rStick2.yAxis, rStick2.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) + (float(1.5708)), glm::vec3(0.f, 1.f, 0.f));
-			knight2.localRotation = ((glm::atan(rStick2.yAxis, rStick2.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) + (-float(1.5708)); // Update local rotation for bullet
+			knight1.rotate = glm::rotate(glm::mat4(), ((glm::atan(rStick1.yAxis, rStick1.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) + (float(1.5708)), glm::vec3(0.f, 1.f, 0.f));
+			knight1.localRotation = ((glm::atan(rStick1.yAxis, rStick1.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) + (-float(1.5708)); // Update local rotation for bullet
 
+			P1.Shield.position.x = knight1.position.x + glm::cos(knight1.OppAngle) * 0.4f;
+			P1.Shield.position.z = knight1.position.z + glm::sin(knight1.OppAngle) * 0.4f;
 		}
+		
+
 		// -------------------------------------------- RIGHT TRIGGER PLAYER 1 --------------------------------------------
 		float lTrig1, rTrig1;
 		XBoxController.GetTriggers(0, lTrig1, rTrig1);
@@ -551,6 +636,94 @@ void Game::update()
 			P1.PrevStickY = rStick1.yAxis;
 		}
 
+		
+
+		// -------------------------------------------- Bullet Pillar Collision --------------------------------------------
+		// A Shit Ton of Bullshit Hardcoded Pillar Collision w/ Bullets is below.
+		{
+			// Bullet 1 and Top Pillar Collision for p1
+
+			for (int i = 0; i < p1Bullets.size(); i++) // change p1Bullets into function call variable
+			{
+				if (1.6 > p1Bullets[i]->position.x + P1.BulletMoveVal[i].x && p1Bullets[i]->position.x + P1.BulletMoveVal[i].x > -1.6 && -2.9 > p1Bullets[i]->position.z + P1.BulletMoveVal[i].y && p1Bullets[i]->position.z + P1.BulletMoveVal[i].y > -5.9)
+				{
+					if (1.6 < p1Bullets[i]->position.x - P1.BulletMoveVal[i].x || p1Bullets[i]->position.x - P1.BulletMoveVal[i].x < -1.6)
+						P1.BulletMoveVal[i].x *= -1, P1.BulletBounceNum[i] += 0.5;
+					else if (-2.9 < p1Bullets[i]->position.z - P1.BulletMoveVal[i].y || p1Bullets[i]->position.z - P1.BulletMoveVal[i].y < -5.9)
+						P1.BulletMoveVal[i].y *= -1, P1.BulletBounceNum[i] += 0.5;
+				}
+				//Bullet 1 and Middle Pillar Collision for p1
+				if (1.6 > p1Bullets[i]->position.x + P1.BulletMoveVal[i].x && p1Bullets[ i ]->position.x + P1.BulletMoveVal[i].x > -1.6 && 1.4 > p1Bullets[i]->position.z + P1.BulletMoveVal[i].y && p1Bullets[i]->position.z + P1.BulletMoveVal[i].y > -1.4)
+				{
+					if (1.6 < p1Bullets[i]->position.x - P1.BulletMoveVal[i].x || p1Bullets[i]->position.x - P1.BulletMoveVal[i].x < -1.6)
+						P1.BulletMoveVal[i].x *= -1, P1.BulletBounceNum[i] += 0.5;
+					else if (1.4 < p1Bullets[i]->position.z - P1.BulletMoveVal[i].y || p1Bullets[i]->position.z - P1.BulletMoveVal[i].y < -1.4)
+						P1.BulletMoveVal[i].y *= -1, P1.BulletBounceNum[i] += 0.5;
+				}
+				//Bullet 1 and Bottom Pillar Collision for p1
+				if (1.6 > p1Bullets[i]->position.x + P1.BulletMoveVal[i].x && p1Bullets[i]->position.x + P1.BulletMoveVal[i].x > -1.6 && 5.9 > p1Bullets[i]->position.z + P1.BulletMoveVal[i].y && p1Bullets[i]->position.z + P1.BulletMoveVal[i].y > 2.9)
+				{
+					if (1.6 < p1Bullets[i]->position.x - P1.BulletMoveVal[i].x || p1Bullets[i]->position.x - P1.BulletMoveVal[i].x < -1.6)
+						P1.BulletMoveVal[i].x *= -1, P1.BulletBounceNum[i] += 0.5;
+					else if (5.9 < p1Bullets[i]->position.z - P1.BulletMoveVal[i].y || p1Bullets[i]->position.z - P1.BulletMoveVal[i].y < 2.9)
+						P1.BulletMoveVal[i].y *= -1, P1.BulletBounceNum[i] += 0.5;
+				}
+
+			}
+			
+			
+		}
+
+		//-------------------------------------------- Outer Walls Bullet Collision Check --- PLAYER 1 --------------------------------------------
+
+		for (int i = 0; i < p1Bullets.size(); i++) // change p1Bullets into function call variable
+		{
+			if (p1Bullets[i]->position.x < -13.5 || p1Bullets[i]->position.x > 13.2)
+				P1.BulletMoveVal[i].x *= -1, P1.BulletBounceNum[i]++;
+			if (p1Bullets[i]->position.z < -7.35 || p1Bullets[i]->position.z > 7.55)
+				P1.BulletMoveVal[i].y *= -1, P1.BulletBounceNum[i]++;
+		}
+		// Bullet Bounce Num Check (Bullets are Destroyed after 3 bounces) 
+
+		for (int i = 0; i < p1Bullets.size(); i++) // change p1Bullets into function call variable
+		{
+			if (P1.BulletBounceNum[i] > 3)
+			{
+				P1.BulletMoveVal[i].x = 0, P1.BulletMoveVal[i].y = 0;
+				p1Bullets[i]->position.x = 0;
+				p1Bullets[i]->position.z = 0;
+				p1Bullets[i]->translate = glm::translate(glm::mat4(), p1Bullets[i]->position); //set position of object
+				P1.BulletBounceNum[i] = 0;
+			}
+		}
+		
+	}
+	if (XBoxController.GetConnected(1)) {
+		// -------------------------------------------- LEFT THUMB STICK PLAYER 2 --------------------------------------------
+		Input::Stick lStick2, rStick2;
+		XBoxController.GetSticks(1, lStick2, rStick2);
+
+		knight2.Movement(lStick2);
+
+		P2.Shield.translate = knight2.translate;
+		P2.Shield.rotate = glm::rotate(knight2.rotate, 0.f, glm::vec3(0.0f, 1.0f, 0.0f)); // Does not do anything
+
+		// -------------------------------------------- RIGHT THUMB STICK PLAYER 2 --------------------------------------------
+		// Get Opposite angle Player 2 is facing
+		if (((glm::atan(rStick2.yAxis, rStick2.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) >= 0)
+			knight2.OppAngle = ((glm::atan(rStick2.yAxis, rStick2.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) - glm::pi<float>();
+		else if (((glm::atan(rStick2.yAxis, rStick2.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) < 0)
+			knight2.OppAngle = ((glm::atan(rStick2.yAxis, rStick2.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) + glm::pi<float>();
+
+		// Dead Zone Check
+		if (sqrt(rStick2.yAxis*rStick2.yAxis + rStick2.xAxis*rStick2.xAxis) > 0.1f) // DeadZone 10%
+		{
+			knight2.rotate = glm::rotate(glm::mat4(), ((glm::atan(rStick2.yAxis, rStick2.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) + (-float(1.5708)), glm::vec3(0.f, 1.f, 0.f));
+			knight2.localRotation = ((glm::atan(rStick2.yAxis, rStick2.xAxis)) * (180.f / glm::pi<float>()) * float(0.0174533)) + (-float(1.5708)); // Update local rotation for bullet
+		
+			P2.Shield.position.x = knight2.position.x + glm::cos(knight2.OppAngle) * 0.4f;
+			P2.Shield.position.z = knight2.position.z + glm::sin(knight2.OppAngle) * 0.4f;
+		}
 		// -------------------------------------------- RIGHT TRIGGER PLAYER 2 --------------------------------------------
 		float lTrig2, rTrig2;
 		XBoxController.GetTriggers(1, lTrig2, rTrig2);
@@ -588,152 +761,149 @@ void Game::update()
 			P2.PrevStickY = rStick2.yAxis;
 		}
 
-		// -------------------------------------------- Bullet Pillar Collision --------------------------------------------
-		// A Shit Ton of Bullshit Hardcoded Pillar Collision w/ Bullets is below.
+
+		// -------------------------------------------- BULLET PILLAR COLLISIONS --------------------------------------------
 		{
-			// Bullet 1 and Top Pillar Collision for p1
-
-			for (int i = 0; i < p1Bullets.size(); i++) { // change p1Bullets into function call variable
-
-
-
-				if (1.6 > p1Bullets[i]->position.x + P1.BulletMoveVal[i].x && p1Bullets[i]->position.x + P1.BulletMoveVal[i].x > -1.6 && -2.9 > p1Bullets[i]->position.z + P1.BulletMoveVal[i].z && p1Bullets[i]->position.z + P1.BulletMoveVal[i].z > -5.9)
-				{
-					if (1.6 < p1Bullets[i]->position.x - P1.BulletMoveVal[i].x || p1Bullets[i]->position.x - P1.BulletMoveVal[i].x < -1.6)
-						P1.BulletMoveVal[i].x *= -1, P1.BulletBounceNum[i] += 0.5;
-					else if (-2.9 < p1Bullets[i]->position.z - P1.BulletMoveVal[i].z || p1Bullets[i]->position.z - P1.BulletMoveVal[i].z < -5.9)
-						P1.BulletMoveVal[i].z *= -1, P1.BulletBounceNum[i] += 0.5;
-				}
-				//Bullet 1 and Middle Pillar Collision for p1
-				if (1.6 > p1Bullets[i]->position.x + P1.BulletMoveVal[i].x && p1Bullets[ i ]->position.x + P1.BulletMoveVal[i].x > -1.6 && 1.4 > p1Bullets[i]->position.z + P1.BulletMoveVal[i].z && p1Bullets[i]->position.z + P1.BulletMoveVal[i].z > -1.4)
-				{
-					if (1.6 < p1Bullets[i]->position.x - P1.BulletMoveVal[i].x || p1Bullets[i]->position.x - P1.BulletMoveVal[i].x < -1.6)
-						P1.BulletMoveVal[i].x *= -1, P1.BulletBounceNum[i] += 0.5;
-					else if (1.4 < p1Bullets[i]->position.z - P1.BulletMoveVal[i].z || p1Bullets[i]->position.z - P1.BulletMoveVal[i].z < -1.4)
-						P1.BulletMoveVal[i].z *= -1, P1.BulletBounceNum[i] += 0.5;
-				}
-				//Bullet 1 and Bottom Pillar Collision for p1
-				if (1.6 > p1Bullets[i]->position.x + P1.BulletMoveVal[i].x && p1Bullets[i]->position.x + P1.BulletMoveVal[i].x > -1.6 && 5.9 > p1Bullets[i]->position.z + P1.BulletMoveVal[i].z && p1Bullets[i]->position.z + P1.BulletMoveVal[i].z > 2.9)
-				{
-					if (1.6 < p1Bullets[i]->position.x - P1.BulletMoveVal[i].x || p1Bullets[i]->position.x - P1.BulletMoveVal[i].x < -1.6)
-						P1.BulletMoveVal[i].x *= -1, P1.BulletBounceNum[i] += 0.5;
-					else if (5.9 < p1Bullets[i]->position.z - P1.BulletMoveVal[i].z || p1Bullets[i]->position.z - P1.BulletMoveVal[i].z < 2.9)
-						P1.BulletMoveVal[i].z *= -1, P1.BulletBounceNum[i] += 0.5;
-				}
-
-			}
-			
 			// Player 2
-			//MISSING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		}
-
-		//-------------------------------------------- Outer Walls Bullet Collision Check --- PLAYER 1 --------------------------------------------
-
-		for (int i = 0; i < p1Bullets.size(); i++) { // change p1Bullets into function call variable
-
-
-			if (p1Bullets[i]->position.x < -13.5 || p1Bullets[i]->position.x > 13.2)
-				P1.BulletMoveVal[i].x *= -1, P1.BulletBounceNum[i]++;
-			if (p1Bullets[i]->position.z < -7.35 || p1Bullets[i]->position.z > 7.55)
-				P1.BulletMoveVal[i].z *= -1, P1.BulletBounceNum[i]++;
-
-		}
-		// Bullet Bounce Num Check (Bullets are Destroyed after 3 bounces) 
-
-		for (int i = 0; i < p1Bullets.size(); i++) { // change p1Bullets into function call variable
-
-			if (P1.BulletBounceNum[i] > 3) {
-
-				P1.BulletMoveVal[i].x = 0, P1.BulletMoveVal[i].z = 0;
-				p1Bullets[i]->position.x = 0;
-				p1Bullets[i]->position.z = 0;
-
-				p1Bullets[i]->translate = glm::translate(glm::mat4(), p1Bullets[i]->position); //set position of object
-
-
-				P1.BulletBounceNum[i] = 0;
+			for (int i = 0; i < p2Bullets.size(); i++) // change p2Bullets into function call variable
+			{
+				if (1.6 > p2Bullets[i]->position.x + P2.BulletMoveVal[i].x && p2Bullets[i]->position.x + P2.BulletMoveVal[i].x > -1.6 && -2.9 > p2Bullets[i]->position.z + P2.BulletMoveVal[i].y && p2Bullets[i]->position.z + P2.BulletMoveVal[i].y > -5.9)
+				{
+					if (1.6 < p2Bullets[i]->position.x - P2.BulletMoveVal[i].x || p2Bullets[i]->position.x - P2.BulletMoveVal[i].x < -1.6)
+						P2.BulletMoveVal[i].x *= -1, P2.BulletBounceNum[i] += 0.5;
+					else if (-2.9 < p2Bullets[i]->position.z - P2.BulletMoveVal[i].y || p2Bullets[i]->position.z - P2.BulletMoveVal[i].y < -5.9)
+						P2.BulletMoveVal[i].y *= -1, P2.BulletBounceNum[i] += 0.5;
+				}
+				//Bullet 1 and Middle Pillar Collision for p2
+				if (1.6 > p2Bullets[i]->position.x + P2.BulletMoveVal[i].x && p2Bullets[i]->position.x + P2.BulletMoveVal[i].x > -1.6 && 1.4 > p2Bullets[i]->position.z + P2.BulletMoveVal[i].y && p2Bullets[i]->position.z + P2.BulletMoveVal[i].y > -1.4)
+				{
+					if (1.6 < p2Bullets[i]->position.x - P2.BulletMoveVal[i].x || p2Bullets[i]->position.x - P2.BulletMoveVal[i].x < -1.6)
+						P2.BulletMoveVal[i].x *= -1, P2.BulletBounceNum[i] += 0.5;
+					else if (1.4 < p2Bullets[i]->position.z - P2.BulletMoveVal[i].y || p2Bullets[i]->position.z - P2.BulletMoveVal[i].y < -1.4)
+						P2.BulletMoveVal[i].y *= -1, P2.BulletBounceNum[i] += 0.5;
+				}
+				//Bullet 1 and Bottom Pillar Collision for p2
+				if (1.6 > p2Bullets[i]->position.x + P2.BulletMoveVal[i].x && p2Bullets[i]->position.x + P2.BulletMoveVal[i].x > -1.6 && 5.9 > p2Bullets[i]->position.z + P2.BulletMoveVal[i].y && p2Bullets[i]->position.z + P2.BulletMoveVal[i].y > 2.9)
+				{
+					if (1.6 < p2Bullets[i]->position.x - P2.BulletMoveVal[i].x || p2Bullets[i]->position.x - P2.BulletMoveVal[i].x < -1.6)
+						P2.BulletMoveVal[i].x *= -1, P2.BulletBounceNum[i] += 0.5;
+					else if (5.9 < p2Bullets[i]->position.z - P2.BulletMoveVal[i].y || p2Bullets[i]->position.z - P2.BulletMoveVal[i].y < 2.9)
+						P2.BulletMoveVal[i].y *= -1, P2.BulletBounceNum[i] += 0.5;
+				}
 
 			}
+			// -------------------------------------------- Outer Walls/Pillar Bullet Collision Check --- PLAYER 2  --------------------------------------------
 
+			// Player 2
+			for (int i = 0; i < p2Bullets.size(); i++) // change p2Bullets into function call variable
+			{
+				if (p2Bullets[i]->position.x < -13.5 || p2Bullets[i]->position.x > 13.2)
+					P2.BulletMoveVal[i].x *= -1, P2.BulletBounceNum[i]++;
+				if (p2Bullets[i]->position.z < -7.35 || p2Bullets[i]->position.z > 7.55)
+					P2.BulletMoveVal[i].y *= -1, P2.BulletBounceNum[i]++;
+			}
+
+			// Bullet Bounce Num Check (Bullets are Destroyed after 3 bounces) 
+
+			// Player 2
+			for (int i = 0; i < p2Bullets.size(); i++) // change p2Bullets into function call variable
+			{
+				if (P2.BulletBounceNum[i] > 3)
+				{
+					P2.BulletMoveVal[i].x = 0, P2.BulletMoveVal[i].y = 0;
+					p2Bullets[i]->position.x = 0;
+					p2Bullets[i]->position.z = 0;
+					p2Bullets[i]->translate = glm::translate(glm::mat4(), p2Bullets[i]->position); //set position of object
+					P2.BulletBounceNum[i] = 0;
+				}
+			}
 		}
-		// -------------------------------------------- Outer Walls/Pillar Bullet Collision Check --- PLAYER 2  --------------------------------------------
-
-		// Player 2
-		//MISSING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-		// Bullet Bounce Num Check (Bullets are Destroyed after 3 bounces) 
-
-		// Player 2
-		//MISSING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	}
+
+
+
+
+	// -------------------------------------------- Shield Collision Player 1 --------------------------------------------
+	for (int i = 0; i <= 4; i++)
+	{
+		if (glm::distance(p2Bullets[i]->position, P1.Shield.position) < P1.Shield.Radius)
+		{
+			std::cout << "P1Shield was Hit" << std::endl;
+			P2.BulletMoveVal[i].x = glm::reflect(P2.BulletMoveVal[i], glm::vec2(glm::cos(knight1.OppAngle), glm::sin(knight1.OppAngle))).x;
+			P2.BulletMoveVal[i].y = glm::reflect(P2.BulletMoveVal[i], glm::vec2(glm::cos(knight1.OppAngle), glm::sin(knight1.OppAngle))).y;
+			P2.BulletBounceNum[i]++;
+		}
+	}
+
+	// -------------------------------------------- Shield Collision Player 2 --------------------------------------------
+	for (int i = 0; i <= 4; i++)
+	{
+		if (glm::distance(p1Bullets[i]->position, P2.Shield.position) < P2.Shield.Radius)
+		{
+			std::cout << "P2Shield was Hit" << std::endl;
+			P1.BulletMoveVal[i].x = glm::reflect(P1.BulletMoveVal[i], glm::vec2(glm::cos(knight2.OppAngle), glm::sin(knight2.OppAngle))).x;
+			P1.BulletMoveVal[i].y = glm::reflect(P1.BulletMoveVal[i], glm::vec2(glm::cos(knight2.OppAngle), glm::sin(knight2.OppAngle))).y;
+			P1.BulletBounceNum[i]++;
+		}
+	}
+
 	// -------------------------------------------- Player 1 Death --------------------------------------------
-	if (p2Bullets[0]->position.x > knight1.position.x - 1 && knight1.position.x + 1 > p2Bullets[0]->position.x &&
-		p2Bullets[0]->position.z > knight1.position.z - 1 && knight1.position.z + 1 > p2Bullets[0]->position.z)
+	if (glm::distance(p2Bullets[0]->position, knight1.position) < knight1.Radius) // CIRCLE COLLISION CHECK
 	{
-		P1.Death(&knight1, &knight2, p1Bullets, p2Bullets, &p2RoundWins);
+		P1.Death(&knight1, &knight2, p1Bullets, p2Bullets, P2.RoundWins, &P2);
 	}
-	else if (p2Bullets[1]->position.x > knight1.position.x - 1 && knight1.position.x + 1 > p2Bullets[1]->position.x &&
-		p2Bullets[1]->position.z > knight1.position.z - 1 && knight1.position.z + 1 > p2Bullets[1]->position.z)
+	else if (glm::distance(p2Bullets[1]->position, knight1.position) < knight1.Radius)
 	{
-		P1.Death(&knight1, &knight2, p1Bullets, p2Bullets, &p2RoundWins);
+		P1.Death(&knight1, &knight2, p1Bullets, p2Bullets, P2.RoundWins, &P2);
 	}
-	else if (p2Bullets[2]->position.x > knight1.position.x - 1 && knight1.position.x + 1 > p2Bullets[2]->position.x &&
-		p2Bullets[2]->position.z > knight1.position.z - 1 && knight1.position.z + 1 > p2Bullets[2]->position.z)
+	else if (glm::distance(p2Bullets[2]->position, knight1.position) < knight1.Radius)
 	{
-		P1.Death(&knight1, &knight2, p1Bullets, p2Bullets, &p2RoundWins);
+		P1.Death(&knight1, &knight2, p1Bullets, p2Bullets, P2.RoundWins, &P2);
 	}
-	else if (p2Bullets[3]->position.x > knight1.position.x - 1 && knight1.position.x + 1 > p2Bullets[3]->position.x &&
-		p2Bullets[3]->position.z > knight1.position.z - 1 && knight1.position.z + 1 > p2Bullets[3]->position.z)
+	else if (glm::distance(p2Bullets[3]->position, knight1.position) < knight1.Radius)
 	{
-		P1.Death(&knight1, &knight2, p1Bullets, p2Bullets, &p2RoundWins);
+		P1.Death(&knight1, &knight2, p1Bullets, p2Bullets, P2.RoundWins, &P2);
 	}
-	else if (p2Bullets[4]->position.x > knight1.position.x - 1 && knight1.position.x + 1 > p2Bullets[4]->position.x &&
-		p2Bullets[4]->position.z > knight1.position.z - 1 && knight1.position.z + 1 > p2Bullets[4]->position.z)
+	else if (glm::distance(p2Bullets[4]->position, knight1.position) < knight1.Radius)
 	{
-		P1.Death(&knight1, &knight2, p1Bullets, p2Bullets, &p2RoundWins);
+		P1.Death(&knight1, &knight2, p1Bullets, p2Bullets, P2.RoundWins, &P2);
 	}
 	// -------------------------------------------- Player 2 Death --------------------------------------------
-	if (p1Bullets[0]->position.x > knight2.position.x - 1 && knight2.position.x + 1 > p1Bullets[0]->position.x &&
-		p1Bullets[0]->position.z > knight2.position.z - 1 && knight2.position.z + 1 > p1Bullets[0]->position.z)
+	if (glm::distance(p1Bullets[0]->position, knight2.position) < knight2.Radius) // CIRCLE COLLISION CHECK
 	{
-		P2.Death(&knight1, &knight2, p1Bullets, p2Bullets, &p1RoundWins);
+		P2.Death(&knight1, &knight2, p1Bullets, p2Bullets, P1.RoundWins, &P1);
 	}
-	else if (p1Bullets[1]->position.x > knight2.position.x - 1 && knight2.position.x + 1 > p1Bullets[1]->position.x &&
-		p1Bullets[1]->position.z > knight2.position.z - 1 && knight2.position.z + 1 > p1Bullets[1]->position.z)
+	else if (glm::distance(p1Bullets[1]->position, knight2.position) < knight2.Radius)
 	{
-		P2.Death(&knight1, &knight2, p1Bullets, p2Bullets, &p1RoundWins);
+		P2.Death(&knight1, &knight2, p1Bullets, p2Bullets, P1.RoundWins, &P1);
 	}
-	else if (p1Bullets[2]->position.x > knight2.position.x - 1 && knight2.position.x + 1 > p1Bullets[2]->position.x &&
-		p1Bullets[2]->position.z > knight2.position.z - 1 && knight2.position.z + 1 > p1Bullets[2]->position.z)
+	else if (glm::distance(p1Bullets[2]->position, knight2.position) < knight2.Radius)
 	{
-		P2.Death(&knight1, &knight2, p1Bullets, p2Bullets, &p1RoundWins);
+		P2.Death(&knight1, &knight2, p1Bullets, p2Bullets, P1.RoundWins, &P1);
 	}
-	else if (p1Bullets[3]->position.x > knight2.position.x - 1 && knight2.position.x + 1 > p1Bullets[3]->position.x &&
-		p1Bullets[3]->position.z > knight2.position.z - 1 && knight2.position.z + 1 > p1Bullets[3]->position.z)
+	else if (glm::distance(p1Bullets[3]->position, knight2.position) < knight2.Radius)
 	{
-		P2.Death(&knight1, &knight2, p1Bullets, p2Bullets, &p1RoundWins);
+		P2.Death(&knight1, &knight2, p1Bullets, p2Bullets, P1.RoundWins, &P1);
 	}
-	else if (p1Bullets[4]->position.x > knight2.position.x - 1 && knight2.position.x + 1 > p1Bullets[4]->position.x &&
-		p1Bullets[4]->position.z > knight2.position.z - 1 && knight2.position.z + 1 > p1Bullets[4]->position.z)
+	else if (glm::distance(p1Bullets[4]->position, knight2.position) < knight2.Radius)
 	{
-		P2.Death(&knight1, &knight2, p1Bullets, p2Bullets, &p1RoundWins);
+		P2.Death(&knight1, &knight2, p1Bullets, p2Bullets, P1.RoundWins, &P1);
 	}
 
 	// -------------------------------------------- Translate if bullets are supposed to move --------------------------------------------
 	if (P1.BulletMove == true)
 	{
-		for (int i = 0; i < p1Bullets.size(); i++) {
-
-			p1Bullets[i]->translate = glm::translate(p1Bullets[i]->translate, glm::vec3(P1.BulletMoveVal[i].x, 0.f, P1.BulletMoveVal[i].z));
-
+		for (int i = 0; i < p1Bullets.size(); i++)
+		{
+			p1Bullets[i]->translate = glm::translate(p1Bullets[i]->translate, glm::vec3(P1.BulletMoveVal[i].x, 0.f, P1.BulletMoveVal[i].y));
 		}
 	}
+
 	if (P2.BulletMove == true)
 	{
-		for (int i = 0; i < p1Bullets.size(); i++) {
-
-			p2Bullets[i]->translate = glm::translate(p2Bullets[i]->translate, glm::vec3(P2.BulletMoveVal[i].x, 0.f, P2.BulletMoveVal[i].z));
-
+		for (int i = 0; i < p1Bullets.size(); i++)
+		{
+			p2Bullets[i]->translate = glm::translate(p2Bullets[i]->translate, glm::vec3(P2.BulletMoveVal[i].x, 0.f, P2.BulletMoveVal[i].y));
 		}
 	}
 	if (doParenting == true)
@@ -743,7 +913,9 @@ void Game::update()
 
 	// ---------------------- F = T * R * S ----------------------
 	knight1Animation.transform = knight1Animation.translate * knight1Animation.rotate * glm::scale(glm::mat4(), glm::vec3(knight1Animation.scale));
-	
+	P1.Shield.transform = P1.Shield.translate * P1.Shield.rotate * glm::scale(glm::mat4(), glm::vec3(P1.Shield.scale));
+	P2.Shield.transform = P2.Shield.translate * P2.Shield.rotate * glm::scale(glm::mat4(), glm::vec3(P2.Shield.scale));
+
 	knight1.transform = knight1.translate * knight1.rotate * glm::scale(glm::mat4(), glm::vec3(knight1.scale));
 	knight2.transform = knight2.translate * knight2.rotate * glm::scale(glm::mat4(), glm::vec3(knight2.scale));
 	arena.transform = arena.translate * arena.rotate * glm::scale(glm::mat4(), glm::vec3(arena.scale));
@@ -754,14 +926,31 @@ void Game::update()
 	monkeyHeadLeft.transform = monkeyHeadLeft.translate * monkeyHeadLeft.rotate * glm::scale(glm::mat4(), glm::vec3(monkeyHeadLeft.scale));
 	monkeyHeadRight.transform = monkeyHeadRight.translate * monkeyHeadRight.rotate * glm::scale(glm::mat4(), glm::vec3(monkeyHeadRight.scale));
 
-	knight1.position = glm::vec3(knight1.transform * glm::vec4(0.0f, 0.0f, 0.0f, 1.0f));
-	knight2.position = glm::vec3(knight2.transform * glm::vec4(0.0f, 0.0f, 0.0f, 1.0f));
-
     skinnedGameObject1.drawMatrix();
     //Skinned mesh Transform
-    skinnedGameObject1.transform = glm::translate(glm::mat4(), glm::vec3(1.0f));
+   // skinnedGameObject1.transform = glm::translate(glm::mat4(), glm::vec3(1.0f));
 
+	P1RoundWins.transform = P1RoundWins.translate * P1RoundWins.rotate * glm::scale(glm::mat4(), glm::vec3(P1RoundWins.scale));
+	P2RoundWins.transform = P2RoundWins.translate * P2RoundWins.rotate * glm::scale(glm::mat4(), glm::vec3(P2RoundWins.scale));
+	if (P1.RoundWins < UIP1Wins.size())
+	{  
+		UIP1Wins[P1.RoundWins]->transform = P1RoundWins.transform;
+	}
+	else
+	{
+		UIP1Wins.back()->transform = P1RoundWins.transform;
+	}
+	if (P2.RoundWins < UIP2Wins.size())
+	{
+		UIP2Wins[P2.RoundWins]->transform = P2RoundWins.transform;
+	}
+	else
+	{
+		UIP2Wins.back()->transform = P2RoundWins.transform;
+	}
 
+	knight1.position = glm::vec3(knight1.transform * glm::vec4(0.0f, 0.0f, 0.0f, 1.0f));
+	knight2.position = glm::vec3(knight2.transform * glm::vec4(0.0f, 0.0f, 0.0f, 1.0f));
 
 	for (int i = 0; i < p1Bullets.size(); i++)
 	{
@@ -780,6 +969,7 @@ void Game::update()
             itr++;
         }
     }
+
 	if (shouldLightsSpin)
 	{
 		lightSpinner = glm::rotate(lightSpinner, deltaTime *(glm::pi<float>() / 2.f), glm::vec3(0.f, 0.f, 1.f));
@@ -794,8 +984,7 @@ void Game::draw()
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	//render stuff
-	//knight1.draw(phong, cameraTransform, cameraProjection, pointLights, directionalLight);
+	// -------------------------------------------- DRAW CALLS --------------------------------------------
 	knight2.draw(phong, cameraTransform, cameraProjection, pointLights, directionalLight);
 	
 	for (int i = 0; i < p1Bullets.size(); i++)
@@ -811,18 +1000,89 @@ void Game::draw()
 	brick.draw(phong, cameraTransform, cameraProjection, pointLights, directionalLight);
 	slab.draw(phong, cameraTransform, cameraProjection, pointLights, directionalLight);
 	pillars.draw(phong, cameraTransform, cameraProjection, pointLights, directionalLight);
-
-
-	
 	knight1Animation.draw(animationShader, cameraTransform, cameraProjection, pointLights, directionalLight); //knight animation 1 walk
+	P1.Shield.draw(phong, cameraTransform, cameraProjection, pointLights, directionalLight);
+	P2.Shield.draw(phong, cameraTransform, cameraProjection, pointLights, directionalLight);
 
-
-
-	if (p1RoundWins >= 5)
+	// MONKEY HEAD WIN CONDITION
+	if (P1.RoundWins >= 5)
 		monkeyHeadLeft.draw(phong, cameraTransform, cameraProjection, pointLights, directionalLight);
-	if (p2RoundWins >= 5)
+	if (P2.RoundWins >= 5)
 		monkeyHeadRight.draw(phong, cameraTransform, cameraProjection, pointLights, directionalLight);
 
+	if (P1.RoundWins < UIP1Wins.size())
+	{
+		UIP1Wins[P1.RoundWins]->draw(UI, cameraTransform, cameraProjOrtho, pointLights, directionalLight);
+	}
+	else
+	{
+		UIP1Wins.back()->draw(UI, cameraTransform, cameraProjOrtho, pointLights, directionalLight);
+	}
+
+	if( P2.RoundWins < UIP2Wins.size() )
+	{
+		UIP2Wins[P2.RoundWins]->draw(UI, cameraTransform, cameraProjOrtho, pointLights, directionalLight);
+	}
+	else
+	{
+		UIP2Wins.back()->draw(UI, cameraTransform, cameraProjOrtho, pointLights, directionalLight);
+	}
+
+    skinnedGameObject1.draw(phong, cameraTransform, cameraProjection, pointLights, directionalLight);
+
+
+    {
+        //switch (P1.RoundWins)
+        //{
+        //case 1:
+        //	for (static bool once = true; once; once = false) // THIS RUNS CODE ONCE IN A LOOP
+        //		(P1RoundWins.loadTexture(TextureType::Diffuse, "textures/P1W1.png"));
+        //	break;
+        //case 2:
+        //	for (static bool once = true; once; once = false)
+        //		P1RoundWins.loadTexture(TextureType::Diffuse, "textures/P1W2.png");
+        //	break;
+        //case 3:
+        //	for (static bool once = true; once; once = false)
+        //		P1RoundWins.loadTexture(TextureType::Diffuse, "textures/P1W3.png");
+        //	break;
+        //case 4:
+        //	for (static bool once = true; once; once = false)
+        //		P1RoundWins.loadTexture(TextureType::Diffuse, "textures/P1W4.png");
+        //	break;
+        //case 5:
+        //	for (static bool once = true; once; once = false)
+        //		P1RoundWins.loadTexture(TextureType::Diffuse, "textures/P1W5.png");
+        //	break;
+        //default:
+        //	break;
+        //}
+        //switch (P2.RoundWins)
+        //{
+        //case 1:
+        //	for (static bool once = true; once; once = false)
+        //		P2RoundWins.loadTexture(TextureType::Diffuse, "textures/P2W1.png");
+        //	break;
+        //case 2:
+        //	for (static bool once = true; once; once = false)
+        //		P2RoundWins.loadTexture(TextureType::Diffuse, "textures/P2W2.png");
+        //	break;
+        //case 3:
+        //	for (static bool once = true; once; once = false)
+        //		P2RoundWins.loadTexture(TextureType::Diffuse, "textures/P2W3.png");
+        //	break;
+        //case 4:
+        //	for (static bool once = true; once; once = false)
+        //		P2RoundWins.loadTexture(TextureType::Diffuse, "textures/P2W4.png");
+        //	break;
+        //case 5:
+        //	for (static bool once = true; once; once = false)
+        //		P2RoundWins.loadTexture(TextureType::Diffuse, "textures/P2W5.png");
+        //	break;
+        //default:
+        //	break;
+        //}
+    }
 
     int itr = 0;
     glm::vec3 ambientHold = directionalLight.ambient;
@@ -847,8 +1107,6 @@ void Game::draw()
     directionalLight.ambient = ambientHold;
     directionalLight.diffuse = diffuseHold;
     directionalLight.specular = specularHold;
-
-    skinnedGameObject1.draw(phong, cameraTransform, cameraProjection, pointLights, directionalLight);
 
 	glutSwapBuffers();
 }
@@ -914,12 +1172,14 @@ void Game::keyboardUp(unsigned char key, int mouseX, int mouseY)
 		break;
 	case 'w':
 		wKeydown = false;
+		P1.RoundWins++; // ----------------------------------------------------------- DEBUGGING (DELETE THIS) -------------------------------------------------------------
 		break;
 	case 'a':
 		aKeydown = false;
 		break;
 	case 's':
 		sKeydown = false;
+		P2.RoundWins++; // ----------------------------------------------------------- DEBUGGING (DELETE THIS) -------------------------------------------------------------
 		break;
 	case 'd':
         dKeydown = false;
@@ -943,6 +1203,14 @@ void Game::keyboardUp(unsigned char key, int mouseX, int mouseY)
 	case 'j':
 		jKeyDown = false;
 		break;
+    case '+':
+      //  skinnedGameObject1.setScaleFloat(skinnedGameObject1.getScaleFloat() + 0.05f);
+        skinnedGameObject1.transform = glm::translate(skinnedGameObject1.transform, glm::vec3(-2.0f, 0.0f, 0.0f));
+        break;
+    case '-':
+       // skinnedGameObject1.setScaleFloat(skinnedGameObject1.getScaleFloat() - 0.05f);
+        skinnedGameObject1.transform = glm::translate(skinnedGameObject1.transform, glm::vec3(2.0f, 0.0f, 0.0f));
+        break;
 	default:
 		break;
 	}
@@ -972,10 +1240,6 @@ void Game::mouseMoved(int x, int y)
 {
 
 }
-/*
-Squash and Stretch(Square), Staging(Camera Placement), Solid Drawings(OpenGL), Appeal(Textures and Models), Arcs(Player Walk Animation and Camera Movement at the start of the round)
-*/
-
 void Game::ReadEmitterFile(std::string fileName)
 {
     std::string line;

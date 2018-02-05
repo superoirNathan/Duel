@@ -17,7 +17,7 @@
       <UniqueIdentifier>{2f869ffe-3cd9-49e3-9df7-ec5bcf7ae7ae}</UniqueIdentifier>
     </Filter>
     <Filter Include="tinyxml2">
-      <UniqueIdentifier>{27b769cd-b85d-4029-b053-7e5e1a05c429}</UniqueIdentifier>
+      <UniqueIdentifier>{0a4a6796-0bf6-44cc-bdfa-eeef56c493ab}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,9 +28,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ShaderProgram.cpp">
@@ -63,10 +60,13 @@
     <ClCompile Include="ParticleEmitter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HTRLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="SkinnedGameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HTRLoader.cpp">
+    <ClCompile Include="Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\tinyxml2\tinyxml2.cpp">
@@ -78,9 +78,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ShaderProgram.h">
@@ -128,6 +125,9 @@
     <ClInclude Include="SkinnedGameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\tinyxml2\tinyxml2.h">
       <Filter>tinyxml2</Filter>
     </ClInclude>
@@ -155,6 +155,9 @@
       <Filter>Shaders</Filter>
     </None>
     <None Include="Shaders\Animating.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\UI.frag">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

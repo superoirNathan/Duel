@@ -36,8 +36,10 @@ public:
 	float totalGameTime = 0.f;
 
 	PlayerObject P1, P2;
-	GameObject knight1, knight2, arena, pillars, knight1Animation,knight2Animation, bars, brick, slab, monkeyHeadLeft, monkeyHeadRight, bulletTemplate; //define objects in here.
+	GameObject knight1, knight2, arena, pillars, knight1Animation,knight2Animation, bars, brick, slab, monkeyHeadLeft, monkeyHeadRight, bulletTemplate, P1RoundWins, P2RoundWins; //define objects in here.
     SkinnedGameObject skinnedGameObject1;
+
+    //GameObject WinCircle; //left for debate
 	std::vector<GameObject*> p1Bullets;
 	std::vector<GameObject*> p2Bullets;
 	std::shared_ptr<Mesh> Bullet;
@@ -46,6 +48,7 @@ public:
     std::vector<ParticleEmitter*> loadedEmitters; // loaded posiitons
     std::vector<ParticleEmitter> emitters;        // emitter positions
     std::vector<GameObject*> particleObj;         // drawn objects
+	std::vector<GameObject*> UIP1Wins, UIP2Wins;
     GameObject emitterBase;                  // emitterOBJ Base Initializer
     void Game::ReadEmitterFile(std::string fileName);
 
@@ -54,11 +57,13 @@ public:
 	ShaderProgram phong;
 	ShaderProgram phongColorSides;
 	ShaderProgram animationShader;
+	ShaderProgram UI;
 	std::vector<Light> pointLights;
 	Light directionalLight;
 
 	glm::mat4 cameraTransform;
 	glm::mat4 cameraProjection;
+	glm::mat4 cameraProjOrtho;
 	glm::mat4 lightSpinner;
 
 private:
@@ -80,38 +85,4 @@ private:
 
 	bool doDeCast = false;
 	bool doParenting = false;
-	int p1RoundWins = 0;
-	int p2RoundWins = 0;
-
-	// Player Properties
-
-	/*bool Bullet1Move = false;
-	bool shouldBullet1Move = true;
-	bool once1 = false;
-	bool p1CD = false;
-	int p1Bullet1BounceNum = 0, p1Bullet2BounceNum = 0, p1Bullet3BounceNum = 0, p1Bullet4BounceNum = 0, p1Bullet5BounceNum = 0;
-	float p1Bullet1MoveX, p1Bullet1MoveZ;
-	float p1Bullet2MoveX, p1Bullet2MoveZ;
-	float p1Bullet3MoveX, p1Bullet3MoveZ;
-	float p1Bullet4MoveX, p1Bullet4MoveZ;
-	float p1Bullet5MoveX, p1Bullet5MoveZ;
-	float p1PrevStickX;
-	float p1PrevStickY;
-	float p1BulletCD = 0;
-	int p1BulletNum = 0;
-
-	bool Bullet2Move = false;
-	bool shouldBullet2Move = true;
-	bool once2 = false;
-	bool p2CD = false;
-	int p2Bullet1BounceNum = 0, p2Bullet2BounceNum = 0, p2Bullet3BounceNum = 0, p2Bullet4BounceNum = 0, p2Bullet5BounceNum = 0;
-	float p2Bullet1MoveX, p2Bullet1MoveZ;
-	float p2Bullet2MoveX, p2Bullet2MoveZ;
-	float p2Bullet3MoveX, p2Bullet3MoveZ;
-	float p2Bullet4MoveX, p2Bullet4MoveZ;
-	float p2Bullet5MoveX, p2Bullet5MoveZ;
-	float p2PrevStickX;
-	float p2PrevStickY;
-	float p2BulletCD = 0;
-	int p2BulletNum = 0;*/
 };

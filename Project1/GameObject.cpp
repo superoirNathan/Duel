@@ -4,12 +4,10 @@
 #include <glm/gtc/type_ptr.hpp>
 
 GameObject::GameObject()
-    : m_pLocalScale(1.0f), m_pParent(nullptr), m_pRoot(this)
 {
 
 }
 GameObject::GameObject(std::shared_ptr<Mesh> m)
-    : m_pLocalScale(1.0f), m_pParent(nullptr), m_pRoot(this)
 {
 	mesh = m;
 }
@@ -22,6 +20,38 @@ void GameObject::loadTexture(TextureType type, std::string texFile)
 	mat.loadTexture(type, texFile);
 }
 
+bool GameObject::checkCollision(GameObject &other)
+{
+	glm::vec4 myPos = (translate * rotate * glm::scale(glm::mat4(), glm::vec3(scale))) * glm::vec4(0, 0, 0, 1);
+	glm::vec4 otherPos = (other.translate * other.rotate * glm::scale(glm::mat4(), glm::vec3(other.scale))) * glm::vec4(0, 0, 0, 1);
+
+	bool overlapsX = false, overlapsY = false, overlapsZ = false;
+
+	// When perfoming this calculation, we assume that pos is at the centre of the object.
+	overlapsX = abs(otherPos.x - myPos.x) < ((mesh->width / 2.f) + (other.mesh->width / 2.f));
+	overlapsY = abs(otherPos.y - myPos.y) < ((mesh->height / 2.f) + (other.mesh->height / 2.f));
+	overlapsZ = abs(otherPos.z - myPos.z) < ((mesh->depth / 2.f) + (other.mesh->depth / 2.f));
+
+	return overlapsX && overlapsY && overlapsZ; // if any one of these fail than the bounding bos is not colliding
+}
+
+bool GameObject::checkBulletCollision(GameObject &other) //Check Bullet and Shield Collision
+{
+	glm::vec4 myPos = (translate * rotate * glm::scale(glm::mat4(), glm::vec3(scale))) * glm::vec4(0, 0, 0, 1);
+	glm::vec4 otherPos = (other.translate * other.rotate * glm::scale(glm::mat4(), glm::vec3(other.scale))) * glm::vec4(0, 0, 0, 1);
+
+	bool overlapsX = false, overlapsZ = false;
+	bool SAoverlapsX = false, SAoverlapsZ = false; // Seperate axis check
+
+	// When perfoming this calculation, we assume that pos is at the centre of the object.
+	overlapsX = abs(otherPos.x - myPos.x) < ((mesh->width / 2.f) + (other.mesh->width / 2.f));
+	overlapsZ = abs(otherPos.z - myPos.z) < ((mesh->depth / 2.f) + (other.mesh->depth / 2.f));
+
+	// (Check overlap on axis of diagonal hitbox)
+
+
+	return overlapsX && overlapsZ && SAoverlapsX && SAoverlapsZ; // if any one of these fail than the bounding bos is not colliding
+}
 
 void GameObject::draw(ShaderProgram &shader,glm::mat4 cameraTransform, glm::mat4 cameraProjection, std::vector<Light> &pointLights, Light &directionalLight)
 {
@@ -84,8 +114,8 @@ void GameObject::draw(ShaderProgram &shader,glm::mat4 cameraTransform, glm::mat4
 
 void GameObject::Movement(Input::Stick lStick)
 {
-	//if ((position.x + lStick.xAxis * 0.1 > 1.6 || position.x + lStick.xAxis * 0.1 < -1.6) || (position.z + lStick.yAxis * -0.1 > -2.9 || position.z + lStick.yAxis * -0.1 < -5.7)
-	//	&& (position.z + lStick.yAxis * -0.1 > 1.4 || position.z + lStick.yAxis * -0.1 < -1.4) && (position.z + lStick.yAxis * -0.1 > 5.9 || position.z + lStick.yAxis * -0.1 < 2.9))
+	if ((position.x + lStick.xAxis * 0.1 > 1.6 || position.x + lStick.xAxis * 0.1 < -1.6) || (position.z + lStick.yAxis * -0.1 > -2.9 || position.z + lStick.yAxis * -0.1 < -5.7)
+		&& (position.z + lStick.yAxis * -0.1 > 1.4 || position.z + lStick.yAxis * -0.1 < -1.4) && (position.z + lStick.yAxis * -0.1 > 5.9 || position.z + lStick.yAxis * -0.1 < 2.9))
 	{
 		if (lStick.xAxis > 0 && position.x < 13) // Check Magnitude of Stick and
 		{
@@ -117,7 +147,6 @@ void GameObject::Movement(Input::Stick lStick)
 		}
 	}
 }
-
 
 void GameObject::addChild(GameObject * newChild)
 {
@@ -259,6 +288,3 @@ void GameObject::update(float dt)
     for (int i = 0; i < m_pChildren.size(); i++)
         m_pChildren[i]->update(dt);
 }
-
-
-

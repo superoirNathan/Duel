@@ -4,7 +4,6 @@
 #include <glm\glm.hpp>
 #include <vector>
 
-
 struct MeshFace {
     MeshFace() {
         vertices[0] = 0;
@@ -45,8 +44,6 @@ struct MeshFace {
     unsigned int normals[3];
 };
 
-
-
 class Mesh {
 
 public:
@@ -73,6 +70,8 @@ public:
     std::vector<glm::vec3> objVertices;
     std::vector<glm::vec3> objUVs;
     std::vector<glm::vec3> objNormals;
+
+	float width = 0, height = 0, depth = 0;
 
 	unsigned int numFaces = 0;
 	unsigned int numVertices = 0;

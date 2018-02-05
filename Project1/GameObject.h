@@ -31,8 +31,10 @@ public:
 
 	glm::vec3 position;
 	float localRotation;
-
 	float scale = 1;
+
+	float Radius;
+	float OppAngle;
 
     //--Skin Meshing--------------------------------------------------------------
     glm::vec3 m_pLocalScale;
@@ -96,15 +98,16 @@ public:
 
     float deltaTime;
 
-
     //--Skin Meshing END--------------------------------------------------------------
 
-    // Material* ...
 	Material mat;
 
 	void loadMesh(std::string meshFile);
 	void loadTexture(TextureType type, std::string texFile);
 	
+	bool checkCollision(GameObject &other);
+	bool checkBulletCollision(GameObject &other);
+
 	void draw(ShaderProgram &shader,glm::mat4 cameraTransform, glm::mat4 cameraProjection, std::vector<Light> &pointLights, Light &directinalLight);
 
 	void Movement(Input::Stick lStick);

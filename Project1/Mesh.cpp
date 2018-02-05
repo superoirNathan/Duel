@@ -1,5 +1,4 @@
 #define _CRT_SECURE_NO_WARNINGS
-
 #include "Mesh.h"
 #include <vector>
 #include <fstream>
@@ -7,8 +6,9 @@
 #include "glm\glm.hpp"
 
 #define BUFFER_OFFSET(i)((char*)0+(i))
-Mesh::Mesh() 
-  {
+
+Mesh::Mesh() {
+
 }
 
 Mesh::~Mesh() {
@@ -26,17 +26,17 @@ bool Mesh::loadFromFile(const std::string &file) {
 
 	std::string inputString;
 
-    ///    //Release data from opengl (VRAM)
-    std::vector<float>unpackedVertexData;
-    std::vector<float>unpackedTextureData;
-    std::vector<float>unpackedNormalData;
+	//Uniquw Date
+	std::vector<glm::vec3> vertexData;
+	std::vector<glm::vec2> textureData;
+	std::vector<glm::vec3> normalData;
 
-    ///    //Uniquw Date
-    std::vector<glm::vec3> vertexData;
-    std::vector<glm::vec2> textureData;
-    std::vector<glm::vec3> normalData;
+	//Release data from opengl (VRAM)
+	std::vector<float>unpackedVertexData;
+	std::vector<float>unpackedTextureData;
+	std::vector<float>unpackedNormalData;
 
-    ///    //Index / face Data
+        ///    //Index / face Data
     faceData.clear();
     // Containers for OBJ data
     objVertices.clear();
@@ -101,16 +101,29 @@ bool Mesh::loadFromFile(const std::string &file) {
 			std::cout << "Line not recognized, skipping: " << inputString << std::endl;
 			continue;
 		}
-
 	}
 	input.close();
 
+	float minX, maxX, minY, maxY, minZ, maxZ;
+	minX = maxX = vertexData[faceData[0].vertices[0] - 1].x;
+	minY = maxY = vertexData[faceData[0].vertices[0] - 1].y;
+	minZ = maxZ = vertexData[faceData[0].vertices[0] - 1].z;
+
 	//unpack data that we just read from OBJ file
 	for (unsigned int i = 0; i < faceData.size(); i++) {
-		for (unsigned int j = 0; j < 3; j++) {
+		for (unsigned int j = 0; j < 3; j++)
+		{
+			glm::vec3 vert = vertexData[faceData[i].vertices[j] - 1];
 			unpackedVertexData.push_back(vertexData[faceData[i].vertices[j] - 1].x);
 			unpackedVertexData.push_back(vertexData[faceData[i].vertices[j] - 1].y);
 			unpackedVertexData.push_back(vertexData[faceData[i].vertices[j] - 1].z);
+
+			maxX = std::fmaxf(vert.x, maxX);
+			minX = std::fminf(vert.x, minX);
+			maxY = std::fmaxf(vert.y, maxY);
+			minY = std::fminf(vert.y, minY);
+			maxZ = std::fmaxf(vert.z, maxZ);
+			minZ = std::fminf(vert.z, minZ);
 
 			unpackedTextureData.push_back(textureData[faceData[i].textureUVs[j] - 1].x);
 			unpackedTextureData.push_back(textureData[faceData[i].textureUVs[j] - 1].y);
@@ -118,14 +131,15 @@ bool Mesh::loadFromFile(const std::string &file) {
 			unpackedNormalData.push_back(normalData[faceData[i].normals[j] - 1].x);
 			unpackedNormalData.push_back(normalData[faceData[i].normals[j] - 1].y);
 			unpackedNormalData.push_back(normalData[faceData[i].normals[j] - 1].z);
-		
-           
-        
-        }
+		}
 	}
 
 	numFaces = faceData.size();
 	numVertices = numFaces * 3;
+
+	width = maxX - minX;
+	height = maxY - minY;
+	depth = maxZ - minZ;
 
 	//Send Data to OpenGL
 	glGenVertexArrays(1, &vao);
@@ -162,9 +176,7 @@ bool Mesh::loadFromFile(const std::string &file) {
 	glBindVertexArray(GL_NONE);
 	return true;
 
-
 }
-
 
 void Mesh::unload() {
 
@@ -191,13 +203,12 @@ unsigned int Mesh::getNumVertices() {
 	return numVertices;
 }
 
-
 void Mesh::updateMesh(bool updateVertices, bool updateNormals, bool updateUVs, bool calculateNormals)
 {
-   
+
     numFaces = faceData.size();
     numVertices = numFaces * 3;
-    if (objVertices.size() != 0 && objNormals.size() !=0) {
+    if (objVertices.size() != 0 && objNormals.size() != 0) {
 
         ///    //Release data from opengl (VRAM)
         std::vector<float>unpackedVertexData;
@@ -270,36 +281,3 @@ void Mesh::updateMesh(bool updateVertices, bool updateNormals, bool updateUVs, b
     }
 
 }
-
-//for (int i = 0; i < faceData.size(); i++)
-//{
-//    MeshFace* face = &faceData[i];
-//
-//    {
-//        unpackedVertexData.push_back(vertexData[face->vertices[0] -1]);
-//        unpackedVertexData.push_back(vertexData[face->vertices[1] -1]);
-//        unpackedVertexData.push_back(vertexData[face->vertices[2] -1]);
-//    }
-//
-//    if (updateNormals)
-//    {
-//        normals.push_back(normalData[face->normals[0] - 1]);
-//        normals.push_back(normalData[face->normals[1] - 1]);
-//        normals.push_back(normalData[face->normals[2] - 1]);
-//    }
-//
-//    // Per-face normal
-//    if (calculateNormals)
-//    {
-//        normals.push_back(glm::normalize(objNormals[face->vertices[0] - 1]));
-//        normals.push_back(glm::normalize(objNormals[face->vertices[1] - 1]));
-//        normals.push_back(glm::normalize(objNormals[face->vertices[2] - 1]));
-//    }
-//
-//    if (updateUVs)
-//    {
-//        textureCoordinates.push_back(objUVs[face->textureUVs[0] - 1]);
-//        textureCoordinates.push_back(objUVs[face->textureUVs[1] - 1]);
-//        textureCoordinates.push_back(objUVs[face->textureUVs[2] - 1]);
-//    }
-//}

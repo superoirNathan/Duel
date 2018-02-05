@@ -4,32 +4,39 @@ animation.cpp(7): warning C4018: '<': signed/unsigned mismatch
 controller.cpp(180): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
 controller.cpp(181): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
   Game.cpp
-Game.cpp(390): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(398): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(400): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(441): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-Game.cpp(469): warning C4018: '<=': signed/unsigned mismatch
-Game.cpp(478): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(596): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(632): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(643): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(725): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(733): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(766): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(775): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(776): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(786): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(801): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(832): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(834): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(473): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(481): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(483): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(522): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+Game.cpp(550): warning C4018: '<=': signed/unsigned mismatch
+Game.cpp(559): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(646): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(679): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(688): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(768): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(798): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(809): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(896): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(904): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(935): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(943): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(955): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(964): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(965): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(976): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(990): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(1013): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(1022): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(1092): warning C4018: '<': signed/unsigned mismatch
+Game.cpp(1094): warning C4018: '<': signed/unsigned mismatch
   GameObject.cpp
-GameObject.cpp(40): warning C4018: '<': signed/unsigned mismatch
-GameObject.cpp(93): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-GameObject.cpp(98): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-GameObject.cpp(110): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-GameObject.cpp(115): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-GameObject.cpp(136): warning C4018: '<': signed/unsigned mismatch
-GameObject.cpp(259): warning C4018: '<': signed/unsigned mismatch
+GameObject.cpp(70): warning C4018: '<': signed/unsigned mismatch
+GameObject.cpp(123): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+GameObject.cpp(128): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+GameObject.cpp(140): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+GameObject.cpp(145): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+GameObject.cpp(165): warning C4018: '<': signed/unsigned mismatch
+GameObject.cpp(288): warning C4018: '<': signed/unsigned mismatch
   HTRLoader.cpp
 HTRLoader.cpp(92): warning C4018: '<': signed/unsigned mismatch
 HTRLoader.cpp(107): warning C4018: '<': signed/unsigned mismatch
@@ -83,10 +90,8 @@ Timer.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible los
 Timer.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-c:\users\100523109\desktop\duel\project1\htrloader.cpp(263): warning C4715: 'HTRLoader::processHeader': not all control paths return a value
-c:\users\100523109\desktop\duel\project1\htrloader.cpp(348): warning C4715: 'HTRLoader::processBasePositionSection': not all control paths return a value
-  1765 of 1792 functions (98.5%) were compiled, the rest were copied from previous compilation.
-    8 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+c:\users\100523109\desktop\winter2018\gdwii\duelv1.3.1\duelv1.3.2\project1\htrloader.cpp(263): warning C4715: 'HTRLoader::processHeader': not all control paths return a value
+c:\users\100523109\desktop\winter2018\gdwii\duelv1.3.1\duelv1.3.2\project1\htrloader.cpp(348): warning C4715: 'HTRLoader::processBasePositionSection': not all control paths return a value
+  All 1810 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  Project1.vcxproj -> C:\Users\100523109\Desktop\Duel\Release\Game_Project.exe
+  Project1.vcxproj -> C:\Users\100523109\Desktop\winter2018\GDWII\DuelV1.3.1\DuelV1.3.2\Release\Game_Project.exe
