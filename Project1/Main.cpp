@@ -47,7 +47,7 @@ int main(int argc,char **argv)
 	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow("Duel");
-	//glutFullScreen();
+	glutFullScreen();
 
 	glewExperimental = true;
 

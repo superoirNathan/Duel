@@ -14,7 +14,7 @@
 #include <GLM\gtc\type_ptr.hpp>
 #include <string>
 #include "JointTypes.h"
-
+#include "KeyframeController.h"
 
 class GameObject
 {
@@ -35,6 +35,10 @@ public:
 
 	float Radius;
 	float OppAngle;
+	float currAngle;
+
+    float uvScroll = 0.0f;
+    bool uvScrollLeftRight = false;
 
     //--Skin Meshing--------------------------------------------------------------
     glm::vec3 m_pLocalScale;
@@ -53,7 +57,7 @@ public:
 
     std::vector<GameObject*> m_pChildren; // Pointers to children
 
-    // Forward Kinematics
+                                          // Forward Kinematics
     void addChild(GameObject* newChild);
     void removeChild(GameObject* rip);
 
@@ -67,6 +71,7 @@ public:
     // it's parent. Which would mean the gameobject's WORLD position would be (0,4,0).
     // (0,4,0) = world position of parent + gameobject's local offset from parent
     // This is a very important concept to understand!
+    
     void setLocalPosition(glm::vec3 newPosition);
     void setLocalRotationAngleX(float newAngle);
     void setLocalRotationAngleY(float newAngle);
@@ -97,8 +102,15 @@ public:
     void GameObject::setScaleFloat(float newScaleFloat);
 
     float deltaTime;
-
+	int shaderNumber = 1;
     //--Skin Meshing END--------------------------------------------------------------
+
+    // -- Speed Controll / curve / slopes/  catmull
+    // Keyframes
+    KeyframeController<glm::vec3> keyframeController; // holds and updates our keyframe animation
+    glm::vec3 catmullT0;
+    glm::vec3 catmullT1;
+    glm::vec3 interpolatedPosition;
 
 	Material mat;
 
@@ -108,7 +120,8 @@ public:
 	bool checkCollision(GameObject &other);
 	bool checkBulletCollision(GameObject &other);
 
-	void draw(ShaderProgram &shader,glm::mat4 cameraTransform, glm::mat4 cameraProjection, std::vector<Light> &pointLights, Light &directinalLight);
+	void draw(ShaderProgram &shader,glm::mat4 cameraTransform, glm::mat4 cameraProjection, Light &pointLight, GameObject);
+    void drawParticle(ShaderProgram &shader, glm::mat4 cameraTransform, glm::mat4 cameraProjection, Light &pointLight);
 
-	void Movement(Input::Stick lStick);
+	void Movement(Input::Stick lStick, GameObject& pillar1, GameObject& pillar2, GameObject& pillar3);
 };

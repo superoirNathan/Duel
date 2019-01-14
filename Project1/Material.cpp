@@ -38,8 +38,21 @@ void Material::loadTexture(TextureType type, std::string texFile) {
 			exit(0);
 		}
 		break;
+    case BaseTexture:
+        if (!texture.load(texFile)) {
+            system("pause");
+            exit(0);
+        }
+        break;
+    case Warp:
+       // if (!warp.load(texFile)) {
+       //     system("pause");
+       //     exit(0);
+       // }
+        break;
 	default:
 	{
+        std::cout << texFile << std::endl;
 		std::cout << "Error - TextureType not found: " << type << std::endl;
 		system("pause");
 		exit(0);

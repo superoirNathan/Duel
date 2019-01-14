@@ -1,97 +1,211 @@
 ﻿  animation.cpp
-animation.cpp(7): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\animation.cpp(10): warning C4018: '<': signed/unsigned mismatch
   controller.cpp
-controller.cpp(180): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
-controller.cpp(181): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\controller.cpp(180): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\controller.cpp(181): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
+  FrameBufferObject.cpp
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\framebufferobject.cpp(41): warning C4018: '<': signed/unsigned mismatch
   Game.cpp
-Game.cpp(473): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(481): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(483): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(522): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-Game.cpp(550): warning C4018: '<=': signed/unsigned mismatch
-Game.cpp(559): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(646): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(679): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(688): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(768): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(798): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(809): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(896): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(904): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(935): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(943): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(955): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(964): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(965): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(976): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(990): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(1013): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(1022): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(1092): warning C4018: '<': signed/unsigned mismatch
-Game.cpp(1094): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(100): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(101): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(838): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(844): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(845): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(863): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(867): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(870): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(874): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(876): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(884): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(899): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(903): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(907): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(909): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(917): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1101): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1119): warning C4018: '<=': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1132): warning C4018: '<=': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1200): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1262): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1289): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1300): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1322): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1344): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1362): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1385): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1444): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1450): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1485): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1503): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1508): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1509): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1516): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1517): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1524): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1525): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1569): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1712): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1727): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1743): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1800): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1804): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\game.cpp(1812): warning C4305: '-=': truncation from 'double' to 'float'
   GameObject.cpp
-GameObject.cpp(70): warning C4018: '<': signed/unsigned mismatch
-GameObject.cpp(123): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-GameObject.cpp(128): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-GameObject.cpp(140): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-GameObject.cpp(145): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-GameObject.cpp(165): warning C4018: '<': signed/unsigned mismatch
-GameObject.cpp(288): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\gameobject.cpp(159): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\gameobject.cpp(191): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\gameobject.cpp(196): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\gameobject.cpp(228): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\gameobject.cpp(233): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\gameobject.cpp(271): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\gameobject.cpp(394): warning C4018: '<': signed/unsigned mismatch
   HTRLoader.cpp
-HTRLoader.cpp(92): warning C4018: '<': signed/unsigned mismatch
-HTRLoader.cpp(107): warning C4018: '<': signed/unsigned mismatch
-HTRLoader.cpp(129): warning C4018: '<': signed/unsigned mismatch
-HTRLoader.cpp(229): warning C4305: '=': truncation from 'double' to 'float'
-HTRLoader.cpp(355): warning C4018: '<': signed/unsigned mismatch
-HTRLoader.cpp(394): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\htrloader.cpp(92): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\htrloader.cpp(107): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\htrloader.cpp(129): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\htrloader.cpp(229): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\htrloader.cpp(355): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\htrloader.cpp(394): warning C4018: '<': signed/unsigned mismatch
   tinyxml2.cpp
   Light.cpp
   Main.cpp
   Material.cpp
   Mesh.cpp
-Mesh.cpp(1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
-  Mesh.cpp(1): note: command-line arguments:  see previous definition of '_CRT_SECURE_NO_WARNINGS'
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\mesh.cpp(1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+  c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\mesh.cpp: note: see previous definition of '_CRT_SECURE_NO_WARNINGS'
   ParticleEmitter.cpp
-ParticleEmitter.cpp(123): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-ParticleEmitter.cpp(145): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-ParticleEmitter.cpp(169): warning C4305: 'argument': truncation from 'double' to 'float'
-ParticleEmitter.cpp(239): warning C4018: '<=': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\particleemitter.cpp(125): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\particleemitter.cpp(147): warning C4244: 'initializing': conversion from 'genType' to 'float', possible loss of data
+          with
+          [
+              genType=int
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\particleemitter.cpp(171): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\particleemitter.cpp(259): warning C4018: '<=': signed/unsigned mismatch
   PlayerObject.cpp
-PlayerObject.cpp(32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-PlayerObject.cpp(33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-PlayerObject.cpp(38): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-PlayerObject.cpp(39): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-PlayerObject.cpp(50): warning C4018: '<': signed/unsigned mismatch
-PlayerObject.cpp(56): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(47): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(48): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(53): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(54): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(74): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(87): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(88): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(103): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(104): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(116): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(117): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(129): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(149): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(169): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(192): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\playerobject.cpp(198): warning C4018: '<': signed/unsigned mismatch
   ShaderProgram.cpp
   SkinnedGameObject.cpp
-SkinnedGameObject.cpp(37): warning C4018: '<': signed/unsigned mismatch
-SkinnedGameObject.cpp(73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-SkinnedGameObject.cpp(74): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
-SkinnedGameObject.cpp(76): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-SkinnedGameObject.cpp(107): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-SkinnedGameObject.cpp(166): warning C4018: '<': signed/unsigned mismatch
-SkinnedGameObject.cpp(196): warning C4018: '<': signed/unsigned mismatch
-SkinnedGameObject.cpp(223): warning C4018: '<': signed/unsigned mismatch
-SkinnedGameObject.cpp(299): warning C4018: '<': signed/unsigned mismatch
-SkinnedGameObject.cpp(310): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-SkinnedGameObject.cpp(315): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-SkinnedGameObject.cpp(337): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-SkinnedGameObject.cpp(340): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-SkinnedGameObject.cpp(355): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-SkinnedGameObject.cpp(358): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-SkinnedGameObject.cpp(360): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-SkinnedGameObject.cpp(399): warning C4018: '<': signed/unsigned mismatch
-SkinnedGameObject.cpp(405): warning C4018: '<': signed/unsigned mismatch
-  SoundSystem.cpp
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(36): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(73): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(75): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(106): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(165): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(195): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(222): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(298): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(309): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(314): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(336): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(339): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(354): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(357): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(359): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(398): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\skinnedgameobject.cpp(404): warning C4018: '<': signed/unsigned mismatch
+  SoundEngine.cpp
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\soundengine.cpp(31): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\soundengine.cpp(36): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\soundengine.cpp(41): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\soundengine.cpp(194): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\soundengine.cpp(199): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\soundengine.cpp(204): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\soundengine.cpp(213): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\soundengine.cpp(218): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\soundengine.cpp(223): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\soundengine.cpp(247): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\soundengine.cpp(257): warning C4018: '<': signed/unsigned mismatch
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\soundengine.cpp(266): warning C4018: '<': signed/unsigned mismatch
   Texture.cpp
   Timer.cpp
-Timer.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-Timer.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\timer.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\100523109\downloads\duelv1.5.9\duelv1.5.9\project1\timer.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-c:\users\100523109\desktop\winter2018\gdwii\duelv1.3.1\duelv1.3.2\project1\htrloader.cpp(263): warning C4715: 'HTRLoader::processHeader': not all control paths return a value
-c:\users\100523109\desktop\winter2018\gdwii\duelv1.3.1\duelv1.3.2\project1\htrloader.cpp(348): warning C4715: 'HTRLoader::processBasePositionSection': not all control paths return a value
-  All 1810 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 1992 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  Project1.vcxproj -> C:\Users\100523109\Desktop\winter2018\GDWII\DuelV1.3.1\DuelV1.3.2\Release\Game_Project.exe
+  Project1.vcxproj -> C:\Users\100523109\Downloads\DuelV1.5.9\DuelV1.5.9\Release\Game_Project.exe

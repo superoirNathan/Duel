@@ -17,7 +17,13 @@
       <UniqueIdentifier>{2f869ffe-3cd9-49e3-9df7-ec5bcf7ae7ae}</UniqueIdentifier>
     </Filter>
     <Filter Include="tinyxml2">
-      <UniqueIdentifier>{0a4a6796-0bf6-44cc-bdfa-eeef56c493ab}</UniqueIdentifier>
+      <UniqueIdentifier>{4152ae4e-c209-4745-a425-b4036fb70033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Geometry Shader">
+      <UniqueIdentifier>{f677544f-7a98-4cd0-ae9f-faa41e393710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\PostProcess">
+      <UniqueIdentifier>{02c48091-7313-4114-9dcb-53541c49c57c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,6 +34,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ShaderProgram.cpp">
@@ -48,9 +57,6 @@
     <ClCompile Include="controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SoundSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="animation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -60,17 +66,20 @@
     <ClCompile Include="ParticleEmitter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HTRLoader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SkinnedGameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Mesh.cpp">
+    <ClCompile Include="HTRLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\tinyxml2\tinyxml2.cpp">
       <Filter>tinyxml2</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameBufferObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundEngine.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +87,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ShaderProgram.h">
@@ -93,9 +105,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Material.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SoundSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="controller.h">
@@ -119,17 +128,20 @@
     <ClInclude Include="HTRLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="JointTypes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SkinnedGameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Mesh.h">
+    <ClInclude Include="JointTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\tinyxml2\tinyxml2.h">
       <Filter>tinyxml2</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameBufferObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundEngine.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -142,16 +154,7 @@
     <None Include="Shaders\Phong.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\PhongNoTexture.frag">
-      <Filter>Shaders</Filter>
-    </None>
     <None Include="Shaders\Phong.frag">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="Shaders\PhongColorSides.frag">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="Shaders\PhongColorSides.vert">
       <Filter>Shaders</Filter>
     </None>
     <None Include="Shaders\Animating.vert">
@@ -159,6 +162,39 @@
     </None>
     <None Include="Shaders\UI.frag">
       <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\duplicate_g.glsl">
+      <Filter>Shaders\Geometry Shader</Filter>
+    </None>
+    <None Include="Shaders\normals_g.glsl">
+      <Filter>Shaders\Geometry Shader</Filter>
+    </None>
+    <None Include="Shaders\particles_g.glsl">
+      <Filter>Shaders\Geometry Shader</Filter>
+    </None>
+    <None Include="Shaders\passThroughWorld_v.glsl">
+      <Filter>Shaders\Geometry Shader</Filter>
+    </None>
+    <None Include="Shaders\passThroughWorld_f.frag">
+      <Filter>Shaders\Geometry Shader</Filter>
+    </None>
+    <None Include="Shaders\gaussianBlur_f.glsl">
+      <Filter>Shaders\PostProcess</Filter>
+    </None>
+    <None Include="Shaders\bloomComposite_f.glsl">
+      <Filter>Shaders\PostProcess</Filter>
+    </None>
+    <None Include="Shaders\bright_f.glsl">
+      <Filter>Shaders\PostProcess</Filter>
+    </None>
+    <None Include="Shaders\quadScreenSpace_g.glsl">
+      <Filter>Shaders\PostProcess</Filter>
+    </None>
+    <None Include="Shaders\Phong_uvScroll.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\postProcessing.frag">
+      <Filter>Shaders\PostProcess</Filter>
     </None>
   </ItemGroup>
 </Project>

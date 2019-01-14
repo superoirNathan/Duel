@@ -140,4 +140,10 @@ public:
     // Make a keyframe controller for each property! this gives you max control!!
     // See the KeyframeController class
     // (this is what full out particle editors do, ie popcorn fx)
+
+
+
+    //not in READER or Writer
+    // Check to see if all part dead.
+    bool checkAllPartDead();
 };

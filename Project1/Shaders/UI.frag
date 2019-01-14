@@ -28,14 +28,22 @@ struct DirectionalLight
 
 struct Material
 {
+    //Maps
 	sampler2D diffuse;
 	sampler2D specular;
 	sampler2D normal;
+    
+    //Texture
+    sampler2D texture;
+    
+    //WARP_1
+    sampler2D warp;
 
+    //Variables
 	vec3 hue;
-
 	float specularExponent;
 };
+
 
 uniform Material material;
 
@@ -45,7 +53,7 @@ out vec4 outColor;
 void main()
 {
 
-	vec4 diffuse = texture(material.diffuse, texCoord);
+	vec4 diffuse = texture(material.texture, texCoord);
 
 	outColor = diffuse;
 }

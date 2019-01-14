@@ -13,8 +13,12 @@ public:
 
 	//Data Memebers
 	Texture diffuse, specular, normal;
+    //Base texture
+    Texture texture;
+    //Colour Correction 2D
+    //Texture warp;
 
-	glm::vec3 hue = glm::vec3(1.f, 1.f, 1.f);
+    glm::vec3 hue = glm::vec3(1.f, 1.f, 1.f);
 	float specularExponent = 50.f;
 
 };

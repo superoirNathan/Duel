@@ -8,7 +8,6 @@
 #include <iostream>
 #include <GL\glew.h>
 #include <include\tinyxml2\tinyxml2.h>
-//#include "TTK/GraphicsUtils.h"
 #include "GLM/gtx/string_cast.hpp"
 #include <math.h>
 

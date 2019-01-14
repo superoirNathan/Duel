@@ -13,6 +13,7 @@ bool Texture::load(const std::string &file) {
 	texObj = SOIL_load_OGL_texture(file.c_str(), SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS);
 	if (texObj == NULL) 
 	{
+        std::cout << file << std::endl;
 		std::cout << "Texture failed to load." << std::endl << SOIL_last_result() << std::endl;
 		return false;
 	}

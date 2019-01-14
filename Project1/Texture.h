@@ -5,9 +5,14 @@
 
 enum TextureType
 {
-	Diffuse,
+    // These are maps, they alter the light intensity(diffuse/specular maps) and calculations(normal maps)
+    Diffuse,
 	Specular,
-	Normal
+	Normal,
+    // These are textures that are the intended base colour of the object
+    BaseTexture,
+    // These are colour correction textures(Warp/Ramp)
+    Warp
 };
 
 class Texture

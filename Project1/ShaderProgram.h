@@ -13,6 +13,7 @@ public:
 	// Loads a vertex shader and a fragment shader
 	// and places them in a program
 	bool load(const std::string &vertFile, const std::string &fragFile);
+    bool load(const std::string &vertFile, const std::string &geoFile, const std::string &fragFile);
 
 	bool isLoaded() const;
 
@@ -50,6 +51,7 @@ private:
 	bool loaded = false;
 
 	GLuint vertexShader = 0;
+    GLuint geoShader = 0;
 	GLuint fragShader = 0;
 	GLuint program = 0;
 

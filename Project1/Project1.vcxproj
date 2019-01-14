@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClCompile Include="animation.cpp" />
     <ClCompile Include="controller.cpp" />
+    <ClCompile Include="FrameBufferObject.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="HTRLoader.cpp" />
@@ -155,7 +156,7 @@
     <ClCompile Include="PlayerObject.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="SkinnedGameObject.cpp" />
-    <ClCompile Include="SoundSystem.cpp" />
+    <ClCompile Include="SoundEngine.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
@@ -163,6 +164,7 @@
     <ClInclude Include="animation.h" />
     <ClInclude Include="animationMath.h" />
     <ClInclude Include="controller.h" />
+    <ClInclude Include="FrameBufferObject.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="HTRLoader.h" />
@@ -176,19 +178,27 @@
     <ClInclude Include="PlayerObject.h" />
     <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="SkinnedGameObject.h" />
-    <ClInclude Include="SoundSystem.h" />
+    <ClInclude Include="SoundEngine.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\Animating.vert" />
+    <None Include="Shaders\bloomComposite_f.glsl" />
+    <None Include="Shaders\bright_f.glsl" />
+    <None Include="Shaders\duplicate_g.glsl" />
+    <None Include="Shaders\gaussianBlur_f.glsl" />
+    <None Include="Shaders\normals_g.glsl" />
+    <None Include="Shaders\particles_g.glsl" />
     <None Include="Shaders\passthrough.vert" />
     <None Include="Shaders\passthrough.frag" />
+    <None Include="Shaders\passThroughWorld_f.frag" />
+    <None Include="Shaders\passThroughWorld_v.glsl" />
     <None Include="Shaders\Phong.frag" />
     <None Include="Shaders\Phong.vert" />
-    <None Include="Shaders\PhongColorSides.frag" />
-    <None Include="Shaders\PhongColorSides.vert" />
-    <None Include="Shaders\PhongNoTexture.frag" />
+    <None Include="Shaders\Phong_uvScroll.vert" />
+    <None Include="Shaders\postProcessing.frag" />
+    <None Include="Shaders\quadScreenSpace_g.glsl" />
     <None Include="Shaders\UI.frag" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

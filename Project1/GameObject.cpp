@@ -5,7 +5,6 @@
 
 GameObject::GameObject()
 {
-
 }
 GameObject::GameObject(std::shared_ptr<Mesh> m)
 {
@@ -32,7 +31,7 @@ bool GameObject::checkCollision(GameObject &other)
 	overlapsY = abs(otherPos.y - myPos.y) < ((mesh->height / 2.f) + (other.mesh->height / 2.f));
 	overlapsZ = abs(otherPos.z - myPos.z) < ((mesh->depth / 2.f) + (other.mesh->depth / 2.f));
 
-	return overlapsX && overlapsY && overlapsZ; // if any one of these fail than the bounding bos is not colliding
+	return overlapsX && overlapsY && overlapsZ; // if any one of these fail than the bounding box is not colliding
 }
 
 bool GameObject::checkBulletCollision(GameObject &other) //Check Bullet and Shield Collision
@@ -43,7 +42,7 @@ bool GameObject::checkBulletCollision(GameObject &other) //Check Bullet and Shie
 	bool overlapsX = false, overlapsZ = false;
 	bool SAoverlapsX = false, SAoverlapsZ = false; // Seperate axis check
 
-	// When perfoming this calculation, we assume that pos is at the centre of the object.
+	// When perfoming this fcalculation, we assume that pos is at the centre of the object.
 	overlapsX = abs(otherPos.x - myPos.x) < ((mesh->width / 2.f) + (other.mesh->width / 2.f));
 	overlapsZ = abs(otherPos.z - myPos.z) < ((mesh->depth / 2.f) + (other.mesh->depth / 2.f));
 
@@ -53,7 +52,7 @@ bool GameObject::checkBulletCollision(GameObject &other) //Check Bullet and Shie
 	return overlapsX && overlapsZ && SAoverlapsX && SAoverlapsZ; // if any one of these fail than the bounding bos is not colliding
 }
 
-void GameObject::draw(ShaderProgram &shader,glm::mat4 cameraTransform, glm::mat4 cameraProjection, std::vector<Light> &pointLights, Light &directionalLight)
+void GameObject::draw(ShaderProgram &shader,glm::mat4 cameraTransform, glm::mat4 cameraProjection, Light &pointLight, GameObject gm)
 {
 	shader.bind();
 	shader.sendUniformMat4("uModel", glm::value_ptr(transform), false);
@@ -64,31 +63,26 @@ void GameObject::draw(ShaderProgram &shader,glm::mat4 cameraTransform, glm::mat4
 	shader.sendUniform("material.diffuse", 0); //0 because diffuse in 0 slot
 	shader.sendUniform("material.specular", 1); //1 because specular in 1 slot
 	shader.sendUniform("material.normal", 2); //2 because normal in 2 slot
-	shader.sendUniform("material.hue", mat.hue);
+    shader.sendUniform("material.texture", 3); 
+    shader.sendUniform("material.warp", 4);
+    shader.sendUniform("material.hue", mat.hue);
 	shader.sendUniform("material.specularExponent", mat.specularExponent);
+	shader.sendUniform("shaderNumber", gm.shaderNumber);
 
-	for (int i = 0; i < pointLights.size(); i++)
-	{
-		std::string prefix = "pointLights[" + std::to_string(i) + "].";
+    std::string prefix = "pointLight.";
 
-		shader.sendUniform(prefix + "position", cameraTransform * pointLights[i].positionOrDirection);
-		shader.sendUniform(prefix + "ambient", pointLights[i].ambient);
-		shader.sendUniform(prefix + "diffuse", pointLights[i].diffuse);
-		shader.sendUniform(prefix + "specular", pointLights[i].specular);
-		shader.sendUniform(prefix + "specularExponent", pointLights[i].specularExponent); //at 1 has doesnt multiply, blocky lighting
-		shader.sendUniform(prefix + "constantAttenuation", pointLights[i].constantAttenuation); //at 0.1 kind of has a light ring coming out from the central light
-		shader.sendUniform(prefix + "linearAttenuation", pointLights[i].linearAttenuation); //at 0.01 also has ring, a little different. 100 takes light away
-		shader.sendUniform(prefix + "quadraticAttenuation", pointLights[i].quadraticAttenuation); // bigger number smaller light
-	}
+		shader.sendUniform(prefix + "position", cameraTransform * pointLight.positionOrDirection);
+		shader.sendUniform(prefix + "ambient", pointLight.ambient);
+		shader.sendUniform(prefix + "diffuse", pointLight.diffuse);
+		shader.sendUniform(prefix + "specular", pointLight.specular);
+		shader.sendUniform(prefix + "specularExponent", pointLight.specularExponent); //at 1 has doesnt multiply, blocky lighting
+		shader.sendUniform(prefix + "constantAttenuation", pointLight.constantAttenuation); //at 0.1 kind of has a light ring coming out from the central light
+		shader.sendUniform(prefix + "linearAttenuation", pointLight.linearAttenuation); //at 0.01 also has ring, a little different. 100 takes light away
 
-	shader.sendUniform("directionalLight.direction", cameraTransform * directionalLight.positionOrDirection);
-	shader.sendUniform("directionalLight.ambient", directionalLight.ambient);
-	shader.sendUniform("directionalLight.diffuse", directionalLight.diffuse);
-	shader.sendUniform("directionalLight.specular", directionalLight.specular);
-	shader.sendUniform("directionalLight.specularExponent", directionalLight.specularExponent);
-
+		shader.sendUniform(prefix + "quadraticAttenuation", pointLight.quadraticAttenuation); // bigger number smaller light
 
 	shader.sendUniform("Time", animation.t);
+    shader.sendUniform("in_uvScroll", this->uvScroll);
 
 	glActiveTexture(GL_TEXTURE0);
 	mat.diffuse.bind();
@@ -99,11 +93,21 @@ void GameObject::draw(ShaderProgram &shader,glm::mat4 cameraTransform, glm::mat4
 	glActiveTexture(GL_TEXTURE2);
 	mat.normal.bind();
 
+    glActiveTexture(GL_TEXTURE3);
+    mat.texture.bind();
+
+ //   glActiveTexture(GL_TEXTURE4);
+ //   mat.warp.bind();
+
 	glBindVertexArray(mesh->vao);
 	glDrawArrays(GL_TRIANGLES, 0, mesh->getNumVertices());
 	glBindVertexArray(GL_NONE);
 
-	mat.normal.unbind();
+  //  mat.warp.unbind();
+  //  glActiveTexture(GL_TEXTURE3);
+    mat.texture.unbind();
+    glActiveTexture(GL_TEXTURE2);
+    mat.normal.unbind();
 	glActiveTexture(GL_TEXTURE1);
 	mat.specular.unbind();
 	glActiveTexture(GL_TEXTURE0);
@@ -111,40 +115,142 @@ void GameObject::draw(ShaderProgram &shader,glm::mat4 cameraTransform, glm::mat4
 
 	shader.unbind();
 }
+void GameObject::drawParticle(ShaderProgram &shader, glm::mat4 cameraTransform, glm::mat4 cameraProjection, Light &pointLight){
+    shader.bind();
+    shader.sendUniformMat4("uModel", glm::value_ptr(transform), false);
+    shader.sendUniformMat4("uView", glm::value_ptr(cameraTransform), false);
+    shader.sendUniformMat4("uProj", glm::value_ptr(cameraProjection), false);
+    //FLoats
+    
+    shader.sendUniform("in_width", this->mesh->geoWidth);
+    shader.sendUniform("in_height", this->mesh->geoHeight);
+    shader.sendUniform("in_time", this->mesh->geoTime);
+    
+    shader.sendUniform("u_texelSize", glm::vec4(1.0f/(this->mesh->width), 1.0f/(this->mesh->height), 0.0f, 0.0f)); //window width and window height doesnt work here
 
-void GameObject::Movement(Input::Stick lStick)
+    //texture
+    shader.sendUniform("material.diffuse", 0); //0 because diffuse in 0 slot
+    shader.sendUniform("material.specular", 1); //1 because specular in 1 slot
+    shader.sendUniform("material.normal", 2); //2 because normal in 2 slot
+    shader.sendUniform("material.texture", 3);
+    shader.sendUniform("material.warp", 4);
+    shader.sendUniform("material.hue", mat.hue);
+    shader.sendUniform("material.specularExponent", mat.specularExponent);
+ //   shader.sendUniform("Time", animation.t);
+    //send texture materials
+    glActiveTexture(GL_TEXTURE0);
+    mat.diffuse.bind();
+    glActiveTexture(GL_TEXTURE1);
+    mat.specular.bind();
+    glActiveTexture(GL_TEXTURE2);
+    mat.normal.bind();
+    glActiveTexture(GL_TEXTURE3);
+    mat.texture.bind();
+  //  glActiveTexture(GL_TEXTURE4);
+  //  mat.warp.bind();
+
+
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+//    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_ADD);
+ 
+    glDepthMask(GL_FALSE);
+    glBindVertexArray(mesh->vao);
+    glDrawArrays(GL_POINTS, 0, mesh->getNumVertices()/3.0f); // equivilate to vbo.draw() in tutorials
+    glBindVertexArray(GL_NONE);
+    glDepthMask(GL_TRUE);
+    glDisable(GL_BLEND);
+
+    //mat.warp.unbind();
+    //glActiveTexture(GL_TEXTURE3);
+    mat.texture.unbind();
+    glActiveTexture(GL_TEXTURE2);
+    mat.normal.unbind();
+    glActiveTexture(GL_TEXTURE1);
+    mat.specular.unbind();
+    glActiveTexture(GL_TEXTURE0);
+    mat.diffuse.unbind();
+
+    shader.unbind();
+}
+
+void GameObject::Movement(Input::Stick lStick, GameObject& pillar1, GameObject& pillar2, GameObject& pillar3)
 {
-	if ((position.x + lStick.xAxis * 0.1 > 1.6 || position.x + lStick.xAxis * 0.1 < -1.6) || (position.z + lStick.yAxis * -0.1 > -2.9 || position.z + lStick.yAxis * -0.1 < -5.7)
-		&& (position.z + lStick.yAxis * -0.1 > 1.4 || position.z + lStick.yAxis * -0.1 < -1.4) && (position.z + lStick.yAxis * -0.1 > 5.9 || position.z + lStick.yAxis * -0.1 < 2.9))
+	//d::cout << this->position.x << "||" << this->position.z << std::endl;
+	//d::cout << pillar1.position.x << "||" << pillar1.position.z << std::endl;
+
+	// Before we move to next frame, lets store our pos before movement
+	glm::mat4 preUpdateTranslate = translate;
+	glm::vec3 preUpdatePos = position;
+
+	// Now lets move the char regardless of pillar coliision
+
+	if (lStick.xAxis > 0 && position.x < 13) // Check Magnitude of Stick and
 	{
-		if (lStick.xAxis > 0 && position.x < 13) // Check Magnitude of Stick and
-		{
-			translate = glm::translate(translate, glm::vec3((lStick.xAxis) * 0.1, 0.f, 0.f));
-			position.x += lStick.xAxis * 0.1; // Update local position for bullet
-		}
-		else if (lStick.xAxis < 0 && position.x > -13)
-		{
-			translate = glm::translate(translate, glm::vec3((lStick.xAxis) * 0.1, 0.f, 0.f));
-			position.x += lStick.xAxis * 0.1; // Update local position for bullet
-		}
+		translate = glm::translate(translate, glm::vec3((lStick.xAxis) * 0.1, 0.f, 0.f));
+		position.x += lStick.xAxis * 0.1; // Update local position for bullet
 	}
-	if ((position.x + lStick.xAxis * 0.1 > 1.6 || position.x + lStick.xAxis * 0.1 < -1.6) || (position.z + lStick.yAxis * -0.1 > -2.8 || position.z + lStick.yAxis * -0.1 < -3)
-		&& (position.z + lStick.yAxis * -0.1 > 1.5 || position.z + lStick.yAxis * -0.1 < 1.3) && (position.z + lStick.yAxis * -0.1 > 6 || position.z + lStick.yAxis * -0.1 < 5.8))
+	else if (lStick.xAxis < 0 && position.x > -13)
 	{
-		if ((position.x + lStick.xAxis * 0.1 > 1.6 || position.x + lStick.xAxis * 0.1 < -1.6) || (position.z + lStick.yAxis * -0.1 > -5.8 || position.z + lStick.yAxis * -0.1 < -6)
-			&& (position.z + lStick.yAxis * -0.1 > -1.3 || position.z + lStick.yAxis * -0.1 < -1.5) && (position.z + lStick.yAxis * -0.1 > 3 || position.z + lStick.yAxis * -0.1 < 2.8))
-		{
-			if (lStick.yAxis > 0 && position.z > -7)
-			{
-				translate = glm::translate(translate, glm::vec3(0.f, 0.f, lStick.yAxis * -0.1));
-				position.z += lStick.yAxis * -0.1; // Update local position for bullet
-			}
-			else if (lStick.yAxis < 0 && position.z < 7)
-			{
-				translate = glm::translate(translate, glm::vec3(0.f, 0.f, lStick.yAxis * -0.1));
-				position.z += lStick.yAxis * -0.1; // Update local position for bullet
-			}
-		}
+		translate = glm::translate(translate, glm::vec3((lStick.xAxis) * 0.1, 0.f, 0.f));
+		position.x += lStick.xAxis * 0.1; // Update local position for bullet
+	}
+	// now if the new movement is within the pillar, lets undo the translation and put the idiot back in his place
+	if (glm::distance(pillar1.position, this->position) < this->Radius + pillar1.Radius)
+	{
+		std::cout << "inside pillar 1" << std::endl;
+		translate = preUpdateTranslate;
+		position = preUpdatePos;
+	}
+	else if (glm::distance(pillar2.position, this->position) < this->Radius + pillar2.Radius)
+	{
+		std::cout << "inside pillar 2" << std::endl;
+		translate = preUpdateTranslate;
+		position = preUpdatePos;
+	}
+	else if (glm::distance(pillar3.position, this->position) < this->Radius + pillar3.Radius)
+	{
+		std::cout << "inside pillar3 " << std::endl;
+		translate = preUpdateTranslate;
+		position = preUpdatePos;
+	}
+	else
+	{
+
+		preUpdateTranslate = translate;
+		preUpdatePos = position;
+
+	}
+
+	if (lStick.yAxis > 0 && position.z > -7)
+	{
+		translate = glm::translate(translate, glm::vec3(0.f, 0.f, lStick.yAxis * -0.1));
+		position.z += lStick.yAxis * -0.1; // Update local position for bullet
+	}
+	else if (lStick.yAxis < 0 && position.z < 7)
+	{
+		translate = glm::translate(translate, glm::vec3(0.f, 0.f, lStick.yAxis * -0.1));
+		position.z += lStick.yAxis * -0.1; // Update local position for bullet
+	}
+
+	// now if the new movement is within the pillar, lets undo the translation and put the idiot back in his place
+	if (glm::distance(pillar1.position, this->position) < this->Radius + pillar1.Radius)
+	{
+		std::cout << "inside pillar 1" << std::endl;
+		translate = preUpdateTranslate;
+		position = preUpdatePos;
+	}
+	else if (glm::distance(pillar2.position, this->position) < this->Radius + pillar2.Radius)
+	{
+		std::cout << "inside pillar 2" << std::endl;
+		translate = preUpdateTranslate;
+		position = preUpdatePos;
+	}
+	else if (glm::distance(pillar3.position, this->position) < this->Radius + pillar3.Radius)
+	{
+		std::cout << "inside pillar3 " << std::endl;
+		translate = preUpdateTranslate;
+		position = preUpdatePos;
 	}
 }
 

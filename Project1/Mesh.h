@@ -47,23 +47,25 @@ struct MeshFace {
 class Mesh {
 
 public:
-	Mesh();
-	~Mesh();
-	//load a mesh and send it to openGL
-	bool loadFromFile(const std::string &file);
+    Mesh();
+    ~Mesh();
+    //load a mesh and send it to openGL
+    bool loadFromFile(const std::string &file);
 
-	//release data from openGL (VRAM) memory
-	void unload();
+    //release data from openGL (VRAM) memory
+    void unload();
 
-	unsigned int getNumFaces();
-	unsigned int getNumVertices();
+    unsigned int getNumFaces();
+    unsigned int getNumVertices();
 
-	//OpenGl buffers an object
-	//Vertex Buffer Object
-	//an object that store out vertices and such
+    //OpenGl buffers an object
+    //Vertex Buffer Object
+    //an object that store out vertices and such
 	GLuint vboVertices = 0;
 	GLuint vboUVs = 0;
 	GLuint vboNormals = 0;
+	GLuint vboTangents = 0;
+	GLuint vboBiTangents = 0;
 	GLuint vao = 0;
 
     // Containers for OBJ data
@@ -71,14 +73,21 @@ public:
     std::vector<glm::vec3> objUVs;
     std::vector<glm::vec3> objNormals;
 
-	float width = 0, height = 0, depth = 0;
+    float width = 0, height = 0, depth = 0;
 
-	unsigned int numFaces = 0;
-	unsigned int numVertices = 0;
+    //Geometry Shader Floats
+    float geoWidth = 1.0f, geoHeight = 1.0f, geoTime = 1.0f;
+
+    unsigned int numFaces = 0;
+    unsigned int numVertices = 0;
     // MeshSkin Var
     void updateMesh(bool updateVertices, bool updateNormals, bool updateUVs, bool calculateNormals);
     ///    //Index / face Data
     std::vector<MeshFace> faceData;
 
+    //Particles
+    void updateParticlePos(bool updateVertices, std::vector<glm::vec3*> positions);
+    //StaticQuad
+    void updateQuad(bool updateVertex, glm::vec3 position);
 };
 

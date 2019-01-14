@@ -19,10 +19,10 @@ ParticleEmitter::ParticleEmitter()
     interpolateColour = false;
 
     //Physics properties
-    velocity0 = glm::vec3(-2.0f, 2.0f, -10.0f);
-    velocity1 = glm::vec3(2.0f, 2.0f, -10.f);
+    velocity0 = glm::vec3(-0.005f, -0.005f, -0.005f);
+    velocity1 = glm::vec3(0.005f, 0.005f, 0.05f);
     emitterPosition = glm::vec3(0.f, 0.f, 0.f);
-    boxWH = glm::vec3(50.0f);
+    boxWH = glm::vec3(5.0f);
     boxOn = false;
     //Steer properties                         
     taretgOn = false;
@@ -49,9 +49,9 @@ ParticleEmitter::ParticleEmitter()
     // Range Properties
     colour0 = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f);
     colour1 = glm::vec4(0.0f, 0.0f, 1.0f, 1.0f);
-    lifeRange = glm::vec2(10.0f, 2.0f);
-    sizeRange = glm::vec2(1.0f, 5.0f);
-    spawnRange = glm::vec2(10.0f, 50.0f);
+    lifeRange = glm::vec2(1.0f, 1.0f);
+    sizeRange = glm::vec2(1.0f, 1.0f);
+    spawnRange = glm::vec2(50.0f, 50.0f);
     massRange = glm::vec2(0.5f, 0.75f);
 
     emitterName = "emitter";
@@ -79,7 +79,9 @@ ParticleEmitter::ParticleEmitter()
  //   emitterList.push_back(new ParticleEmitter(emitter));
 
  //   emitterList[0]->initialize(500);
-    initialize(500);
+ //   initialize(500);
+
+    initialize(300); //change this to change trail amount
 }
 
 ParticleEmitter::~ParticleEmitter()
@@ -180,6 +182,7 @@ void ParticleEmitter::update(float dt)
                     particle->velocity = Math::lerp(velocity0, velocity1, randomTval);
 
                 }
+
             }// if duration end
 
                 // Update physics
@@ -204,8 +207,25 @@ void ParticleEmitter::update(float dt)
                     float tVal = Math::invLerp(particle->life, lifeRange.x, lifeRange.y);
                     particle->colour = Math::lerp(colour0, colour1, tVal);
                 }
+                if (particle->life <= 0) { // if particle has no life remaining put it below scene
+                    particle->position = glm::vec3(-100000.0f);
+                }
 		}// forloop end
+
 	}// if playing end
+}
+
+bool ParticleEmitter::checkAllPartDead() {
+    Particle* particle = m_pParticles;
+    bool tempCheck = false;
+    for (unsigned int i = 0; i < m_pNumParticles; ++i, ++particle)
+    {
+        if (particle->life <= 0) { // if particle has no life
+
+            tempCheck = true;
+        }
+    }
+    return tempCheck;
 }
 
 void ParticleEmitter::draw()
