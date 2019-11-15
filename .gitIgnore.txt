@@ -2,8 +2,6 @@
 ###################
 *.com
 *.class
-*.dll
-*.obj
 # Packages #
 ############
 *.7z
@@ -14,6 +12,3 @@
 *.log
 *.sql
 *.sqlite
-
-# OS generated files #
-######################
