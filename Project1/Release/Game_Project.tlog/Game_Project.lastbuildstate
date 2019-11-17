@@ -1,2 +1,2 @@
-#TargetFrameworkVersion=v4.0:PlatformToolSet=v141:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0.15063.0
-Release|Win32|C:\Users\100523109\Downloads\DuelV1.5.9\DuelV1.5.9\|
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v142:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0
+Release|Win32|C:\Users\natha\Documents\GitHub\Duel\|

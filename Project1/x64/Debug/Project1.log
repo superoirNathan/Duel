@@ -1,43 +1,174 @@
-﻿  Timer.cpp
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\timer.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\timer.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Texture.cpp
-  SoundSystem.cpp
-  ShaderProgram.cpp
-  PlayerObject.cpp
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\playerobject.cpp(32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\playerobject.cpp(33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\playerobject.cpp(38): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\playerobject.cpp(39): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  ParticleEmitter.cpp
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\particleemitter.cpp(123): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\particleemitter.cpp(145): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\particleemitter.cpp(169): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\particleemitter.cpp(239): warning C4018: '<=': signed/unsigned mismatch
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\keyframecontroller.h(97): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\keyframecontroller.h(42): note: while compiling class template member function 'void KeyframeController<glm::vec3>::calculateLookupTable(int)'
-  c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\particleemitter.cpp(77): note: see reference to function template instantiation 'void KeyframeController<glm::vec3>::calculateLookupTable(int)' being compiled
-  c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\particleemitter.h(125): note: see reference to class template instantiation 'KeyframeController<glm::vec3>' being compiled
-  Mesh.cpp
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\mesh.cpp(170): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-  Material.cpp
-  Main.cpp
-  Light.cpp
-  GameObject.cpp
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\gameobject.cpp(122): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\gameobject.cpp(127): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\gameobject.cpp(139): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\gameobject.cpp(144): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-  Game.cpp
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\game.cpp(440): warning C4018: '<': signed/unsigned mismatch
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\game.cpp(482): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\game.cpp(882): warning C4018: '<': signed/unsigned mismatch
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\game.cpp(1008): warning C4018: '<': signed/unsigned mismatch
+﻿  animation.cpp
   controller.cpp
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\controller.cpp(180): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
-c:\users\100619082\desktop\duelv1.2.9\duelv1.2.9\project1\controller.cpp(181): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
-  animation.cpp
+C:\Users\natha\Documents\GitHub\Duel\Project1\controller.cpp(61,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\controller.cpp(66,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\controller.cpp(180,42): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
+  FrameBufferObject.cpp
+C:\Users\natha\Documents\GitHub\Duel\Project1\controller.cpp(181,44): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
+  Game.cpp
+C:\Users\natha\Documents\GitHub\Duel\Project1\FrameBufferObject.cpp(41,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(100,78): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(100,50): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(101,72): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(101,44): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(845,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(876,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(909,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1101,50): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1262,104): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1289,99): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1509,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1517,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1525,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1812,30): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\natha\Documents\GitHub\Duel\Project1\KeyframeController.h(97,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\KeyframeController.h(42): message : while compiling class template member function 'void KeyframeController<glm::vec3>::calculateLookupTable(int)'
+C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(942): message : see reference to function template instantiation 'void KeyframeController<glm::vec3>::calculateLookupTable(int)' being compiled
+  GameObject.cpp
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.h(110): message : see reference to class template instantiation 'KeyframeController<glm::vec3>' being compiled
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(159,54): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(191,35): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(191,35): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(191,35): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(191,35): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(191,35): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(196,35): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(196,35): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(196,35): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(196,35): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(196,35): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(228,36): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(228,36): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(228,36): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(228,36): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(228,36): warning C4244:         ]
+  HTRLoader.cpp
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(233,36): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(233,36): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(233,36): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(233,36): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(233,36): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\HTRLoader.cpp(63,41): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\HTRLoader.cpp(76,41): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  tinyxml2.cpp
+C:\Users\natha\Documents\GitHub\Duel\Project1\HTRLoader.cpp(229,26): warning C4305: '=': truncation from 'double' to 'float'
+  Light.cpp
+  Main.cpp
+  Material.cpp
+  Mesh.cpp
+C:\Users\natha\Documents\GitHub\Duel\Project1\include\tinyxml2\tinyxml2.cpp(2421,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\Mesh.cpp(1,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+C:\Users\natha\Documents\GitHub\Duel\Project1\Mesh.cpp : message : see previous definition of '_CRT_SECURE_NO_WARNINGS'
+C:\Users\natha\Documents\GitHub\Duel\Project1\Mesh.cpp(183,28): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\Mesh.cpp(274,28): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+  ParticleEmitter.cpp
+C:\Users\natha\Documents\GitHub\Duel\Project1\Mesh.cpp(358,36): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(125,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(147,38): warning C4244: 'initializing': conversion from 'genType' to 'float', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(147,38): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(147,38): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(147,38): warning C4244:             genType=int
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(147,38): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(171,64): warning C4305: 'argument': truncation from 'double' to 'T'
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(171,64): warning C4305:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(171,64): warning C4305:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(171,64): warning C4305:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(171,64): warning C4305:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(259,23): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\natha\Documents\GitHub\Duel\Project1\KeyframeController.h(97,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\KeyframeController.h(42): message : while compiling class template member function 'void KeyframeController<glm::vec3>::calculateLookupTable(int)'
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(77): message : see reference to function template instantiation 'void KeyframeController<glm::vec3>::calculateLookupTable(int)' being compiled
+  PlayerObject.cpp
+C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.h(125): message : see reference to class template instantiation 'KeyframeController<glm::vec3>' being compiled
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(47,138): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(47,138): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(47,138): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(47,138): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(47,138): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(48,138): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(48,138): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(48,138): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(48,138): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(48,138): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(53,134): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(53,134): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(53,134): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(53,134): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(53,134): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(54,134): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(54,134): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(54,134): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(54,134): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(54,134): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(87,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(87,50): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(87,50): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(87,50): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(87,50): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(88,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(88,50): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(88,50): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(88,50): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(88,50): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(103,51): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(103,51): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(103,51): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(103,51): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(103,51): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(104,51): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(104,51): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(104,51): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(104,51): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(104,51): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(116,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(116,50): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(116,50): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(116,50): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(116,50): warning C4244:         ]
+  ShaderProgram.cpp
+  SkinnedGameObject.cpp
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(117,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(117,50): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(117,50): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(117,50): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(117,50): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(72,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(72,57): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(72,57): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(72,57): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(72,57): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(73,49): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(75,82): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(75,82): warning C4244:         with
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(75,82): warning C4244:         [
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(75,82): warning C4244:             T=float
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(75,82): warning C4244:         ]
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(106,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(309,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(314,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(336,64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(339,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(354,51): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(357,47): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(359,82): warning C4244: 'argument': conversion from 'float' to 'const unsigned __int64', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\KeyframeController.h(97,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\KeyframeController.h(42): message : while compiling class template member function 'void KeyframeController<glm::vec3>::calculateLookupTable(int)'
+C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(309): message : see reference to function template instantiation 'void KeyframeController<glm::vec3>::calculateLookupTable(int)' being compiled
+  SoundEngine.cpp
+C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.h(110): message : see reference to class template instantiation 'KeyframeController<glm::vec3>' being compiled
+C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(194,77): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(199,75): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(204,76): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(213,77): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(218,75): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+  Texture.cpp
+  Timer.cpp
+C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(223,76): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\Timer.cpp(5,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Generating Code...
+C:\Users\natha\Documents\GitHub\Duel\Project1\Timer.cpp(15,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\natha\Documents\GitHub\Duel\Project1\HTRLoader.cpp(263): warning C4715: 'HTRLoader::processHeader': not all control paths return a value
+C:\Users\natha\Documents\GitHub\Duel\Project1\HTRLoader.cpp(348): warning C4715: 'HTRLoader::processBasePositionSection': not all control paths return a value
 animation.obj : error LNK2001: unresolved external symbol __imp___glewBindBuffer
 Mesh.obj : error LNK2001: unresolved external symbol __imp___glewBindBuffer
 animation.obj : error LNK2001: unresolved external symbol __imp___glewEnableVertexAttribArray
@@ -49,27 +180,33 @@ GameObject.obj : error LNK2001: unresolved external symbol __imp___glewBindVerte
 Mesh.obj : error LNK2001: unresolved external symbol __imp___glewBindVertexArray
 controller.obj : error LNK2019: unresolved external symbol XInputGetState referenced in function "public: bool __cdecl Input::XBoxInput::DownloadPackets(unsigned int)" (?DownloadPackets@XBoxInput@Input@@QEAA_NI@Z)
 controller.obj : error LNK2019: unresolved external symbol XInputSetState referenced in function "public: __cdecl Input::XBoxInput::XBoxInput(void)" (??0XBoxInput@Input@@QEAA@XZ)
-Game.obj : error LNK2019: unresolved external symbol __imp_glutSwapBuffers referenced in function "public: void __cdecl Game::draw(void)" (?draw@Game@@QEAAXXZ)
-Game.obj : error LNK2019: unresolved external symbol FMOD_System_Create referenced in function "enum FMOD_RESULT __cdecl FMOD::System_Create(class FMOD::System * *)" (?System_Create@FMOD@@YA?AW4FMOD_RESULT@@PEAPEAVSystem@1@@Z)
-SoundSystem.obj : error LNK2001: unresolved external symbol FMOD_System_Create
-Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::getNumDrivers(int *)" (?getNumDrivers@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEAH@Z) referenced in function "public: void __cdecl Game::initializeGame(void)" (?initializeGame@Game@@QEAAXXZ)
-SoundSystem.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::getNumDrivers(int *)" (?getNumDrivers@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEAH@Z)
-Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::init(int,unsigned int,void *)" (?init@System@FMOD@@QEAA?AW4FMOD_RESULT@@HIPEAX@Z) referenced in function "public: void __cdecl Game::initializeGame(void)" (?initializeGame@Game@@QEAAXXZ)
-SoundSystem.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::init(int,unsigned int,void *)" (?init@System@FMOD@@QEAA?AW4FMOD_RESULT@@HIPEAX@Z)
-Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::update(void)" (?update@System@FMOD@@QEAA?AW4FMOD_RESULT@@XZ) referenced in function "public: void __cdecl Game::initializeGame(void)" (?initializeGame@Game@@QEAAXXZ)
-SoundSystem.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::update(void)" (?update@System@FMOD@@QEAA?AW4FMOD_RESULT@@XZ)
-Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::createSound(char const *,unsigned int,struct FMOD_CREATESOUNDEXINFO *,class FMOD::Sound * *)" (?createSound@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEBDIPEAUFMOD_CREATESOUNDEXINFO@@PEAPEAVSound@2@@Z) referenced in function "public: void __cdecl Game::initializeGame(void)" (?initializeGame@Game@@QEAAXXZ)
-SoundSystem.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::createSound(char const *,unsigned int,struct FMOD_CREATESOUNDEXINFO *,class FMOD::Sound * *)" (?createSound@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEBDIPEAUFMOD_CREATESOUNDEXINFO@@PEAPEAVSound@2@@Z)
-Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::playSound(class FMOD::Sound *,class FMOD::ChannelGroup *,bool,class FMOD::Channel * *)" (?playSound@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEAVSound@2@PEAVChannelGroup@2@_NPEAPEAVChannel@2@@Z) referenced in function "public: void __cdecl Game::keyboardDown(unsigned char,int,int)" (?keyboardDown@Game@@QEAAXEHH@Z)
-SoundSystem.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::playSound(class FMOD::Sound *,class FMOD::ChannelGroup *,bool,class FMOD::Channel * *)" (?playSound@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEAVSound@2@PEAVChannelGroup@2@_NPEAPEAVChannel@2@@Z)
-Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::Sound::setMode(unsigned int)" (?setMode@Sound@FMOD@@QEAA?AW4FMOD_RESULT@@I@Z) referenced in function "public: void __cdecl Game::initializeGame(void)" (?initializeGame@Game@@QEAAXXZ)
-SoundSystem.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::Sound::setMode(unsigned int)" (?setMode@Sound@FMOD@@QEAA?AW4FMOD_RESULT@@I@Z)
+FrameBufferObject.obj : error LNK2001: unresolved external symbol __imp___glewActiveTexture
 GameObject.obj : error LNK2001: unresolved external symbol __imp___glewActiveTexture
+FrameBufferObject.obj : error LNK2001: unresolved external symbol __imp___glewDrawBuffers
+FrameBufferObject.obj : error LNK2001: unresolved external symbol __imp___glewBindFramebuffer
+FrameBufferObject.obj : error LNK2001: unresolved external symbol __imp___glewCheckFramebufferStatus
+FrameBufferObject.obj : error LNK2001: unresolved external symbol __imp___glewDeleteFramebuffers
+FrameBufferObject.obj : error LNK2001: unresolved external symbol __imp___glewFramebufferTexture2D
+FrameBufferObject.obj : error LNK2001: unresolved external symbol __imp___glewGenFramebuffers
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::Sound::setMode(unsigned int)" (?setMode@Sound@FMOD@@QEAA?AW4FMOD_RESULT@@I@Z) referenced in function "public: void __cdecl Game::initializeGame(void)" (?initializeGame@Game@@QEAAXXZ)
+SoundEngine.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::Sound::setMode(unsigned int)" (?setMode@Sound@FMOD@@QEAA?AW4FMOD_RESULT@@I@Z)
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::ChannelControl::stop(void)" (?stop@ChannelControl@FMOD@@QEAA?AW4FMOD_RESULT@@XZ) referenced in function "public: void __cdecl Game::update(void)" (?update@Game@@QEAAXXZ)
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::ChannelControl::setPaused(bool)" (?setPaused@ChannelControl@FMOD@@QEAA?AW4FMOD_RESULT@@_N@Z) referenced in function "public: void __cdecl Game::update(void)" (?update@Game@@QEAAXXZ)
+SoundEngine.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::ChannelControl::setPaused(bool)" (?setPaused@ChannelControl@FMOD@@QEAA?AW4FMOD_RESULT@@_N@Z)
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::ChannelControl::setMode(unsigned int)" (?setMode@ChannelControl@FMOD@@QEAA?AW4FMOD_RESULT@@I@Z) referenced in function "public: void __cdecl Game::draw(void)" (?draw@Game@@QEAAXXZ)
+SoundEngine.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::ChannelControl::setMode(unsigned int)" (?setMode@ChannelControl@FMOD@@QEAA?AW4FMOD_RESULT@@I@Z)
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::ChannelControl::addDSP(int,class FMOD::DSP *)" (?addDSP@ChannelControl@FMOD@@QEAA?AW4FMOD_RESULT@@HPEAVDSP@2@@Z) referenced in function "public: void __cdecl Game::update(void)" (?update@Game@@QEAAXXZ)
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::ChannelControl::set3DAttributes(struct FMOD_VECTOR const *,struct FMOD_VECTOR const *,struct FMOD_VECTOR const *)" (?set3DAttributes@ChannelControl@FMOD@@QEAA?AW4FMOD_RESULT@@PEBUFMOD_VECTOR@@00@Z) referenced in function "public: void __cdecl Game::update(void)" (?update@Game@@QEAAXXZ)
+SoundEngine.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::ChannelControl::set3DAttributes(struct FMOD_VECTOR const *,struct FMOD_VECTOR const *,struct FMOD_VECTOR const *)" (?set3DAttributes@ChannelControl@FMOD@@QEAA?AW4FMOD_RESULT@@PEBUFMOD_VECTOR@@00@Z)
+Game.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::DSP::setParameterFloat(int,float)" (?setParameterFloat@DSP@FMOD@@QEAA?AW4FMOD_RESULT@@HM@Z) referenced in function "public: void __cdecl Game::update(void)" (?update@Game@@QEAAXXZ)
+SoundEngine.obj : error LNK2001: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::DSP::setParameterFloat(int,float)" (?setParameterFloat@DSP@FMOD@@QEAA?AW4FMOD_RESULT@@HM@Z)
+Game.obj : error LNK2019: unresolved external symbol __imp_glutSwapBuffers referenced in function "public: void __cdecl Game::draw(void)" (?draw@Game@@QEAAXXZ)
 Main.obj : error LNK2019: unresolved external symbol __imp_glewInit referenced in function main
 Main.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowPosition referenced in function main
 Main.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowSize referenced in function main
 Main.obj : error LNK2019: unresolved external symbol __imp_glutInitDisplayMode referenced in function main
 Main.obj : error LNK2019: unresolved external symbol __imp_glutMainLoop referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutFullScreen referenced in function main
 Main.obj : error LNK2019: unresolved external symbol __imp_glutPostRedisplay referenced in function "void __cdecl TimerCallbackFunction(int)" (?TimerCallbackFunction@@YAXH@Z)
 Main.obj : error LNK2019: unresolved external symbol __imp_glutTimerFunc referenced in function "void __cdecl TimerCallbackFunction(int)" (?TimerCallbackFunction@@YAXH@Z)
 Main.obj : error LNK2019: unresolved external symbol __imp_glutKeyboardFunc referenced in function main
@@ -82,6 +219,7 @@ Main.obj : error LNK2019: unresolved external symbol __imp___glutCreateWindowWit
 Main.obj : error LNK2019: unresolved external symbol __imp_glutInitContextVersion referenced in function main
 Main.obj : error LNK2001: unresolved external symbol __imp_glewExperimental
 Mesh.obj : error LNK2001: unresolved external symbol __imp___glewBufferData
+Mesh.obj : error LNK2001: unresolved external symbol __imp___glewBufferSubData
 Mesh.obj : error LNK2001: unresolved external symbol __imp___glewDeleteBuffers
 Mesh.obj : error LNK2001: unresolved external symbol __imp___glewGenBuffers
 Mesh.obj : error LNK2001: unresolved external symbol __imp___glewDeleteVertexArrays
@@ -111,13 +249,27 @@ ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUnifor
 ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUniformMatrix4fv
 ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUseProgram
 ShaderProgram.obj : error LNK2001: unresolved external symbol __imp___glewUniform1ui
-SoundSystem.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::Sound::release(void)" (?release@Sound@FMOD@@QEAA?AW4FMOD_RESULT@@XZ) referenced in function "public: void __cdecl SoundSystem::releaseSound(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?releaseSound@SoundSystem@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
-SoundSystem.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::Sound::setLoopCount(int)" (?setLoopCount@Sound@FMOD@@QEAA?AW4FMOD_RESULT@@H@Z) referenced in function "public: void __cdecl SoundSystem::playSound(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool)" (?playSound@SoundSystem@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z)
+SoundEngine.obj : error LNK2019: unresolved external symbol FMOD_System_Create referenced in function "enum FMOD_RESULT __cdecl FMOD::System_Create(class FMOD::System * *)" (?System_Create@FMOD@@YA?AW4FMOD_RESULT@@PEAPEAVSystem@1@@Z)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::release(void)" (?release@System@FMOD@@QEAA?AW4FMOD_RESULT@@XZ) referenced in function "public: void __cdecl SoundEngine::CleanUp(void)" (?CleanUp@SoundEngine@@QEAAXXZ)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::init(int,unsigned int,void *)" (?init@System@FMOD@@QEAA?AW4FMOD_RESULT@@HIPEAX@Z) referenced in function "public: bool __cdecl SoundEngine::Init(void)" (?Init@SoundEngine@@QEAA_NXZ)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::close(void)" (?close@System@FMOD@@QEAA?AW4FMOD_RESULT@@XZ) referenced in function "public: void __cdecl SoundEngine::CleanUp(void)" (?CleanUp@SoundEngine@@QEAAXXZ)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::update(void)" (?update@System@FMOD@@QEAA?AW4FMOD_RESULT@@XZ) referenced in function "public: void __cdecl SoundEngine::update(float)" (?update@SoundEngine@@QEAAXM@Z)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::set3DSettings(float,float,float)" (?set3DSettings@System@FMOD@@QEAA?AW4FMOD_RESULT@@MMM@Z) referenced in function "public: bool __cdecl SoundEngine::Init(void)" (?Init@SoundEngine@@QEAA_NXZ)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::set3DListenerAttributes(int,struct FMOD_VECTOR const *,struct FMOD_VECTOR const *,struct FMOD_VECTOR const *,struct FMOD_VECTOR const *)" (?set3DListenerAttributes@System@FMOD@@QEAA?AW4FMOD_RESULT@@HPEBUFMOD_VECTOR@@000@Z) referenced in function "public: void __cdecl SoundEngine::setListener(struct FMOD_VECTOR,struct FMOD_VECTOR,struct FMOD_VECTOR,struct FMOD_VECTOR)" (?setListener@SoundEngine@@QEAAXUFMOD_VECTOR@@000@Z)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::getVersion(unsigned int *)" (?getVersion@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEAI@Z) referenced in function "public: bool __cdecl SoundEngine::Init(void)" (?Init@SoundEngine@@QEAA_NXZ)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::createSound(char const *,unsigned int,struct FMOD_CREATESOUNDEXINFO *,class FMOD::Sound * *)" (?createSound@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEBDIPEAUFMOD_CREATESOUNDEXINFO@@PEAPEAVSound@2@@Z) referenced in function "public: bool __cdecl SoundEngine::loadSound(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool,float,float)" (?loadSound@SoundEngine@@QEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NMM@Z)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::createDSPByType(enum FMOD_DSP_TYPE,class FMOD::DSP * *)" (?createDSPByType@System@FMOD@@QEAA?AW4FMOD_RESULT@@W4FMOD_DSP_TYPE@@PEAPEAVDSP@2@@Z) referenced in function "public: bool __cdecl SoundEngine::Init(void)" (?Init@SoundEngine@@QEAA_NXZ)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::System::playSound(class FMOD::Sound *,class FMOD::ChannelGroup *,bool,class FMOD::Channel * *)" (?playSound@System@FMOD@@QEAA?AW4FMOD_RESULT@@PEAVSound@2@PEAVChannelGroup@2@_NPEAPEAVChannel@2@@Z) referenced in function "public: void __cdecl SoundEngine::playSound(int,int)" (?playSound@SoundEngine@@QEAAXHH@Z)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::Sound::release(void)" (?release@Sound@FMOD@@QEAA?AW4FMOD_RESULT@@XZ) referenced in function "public: void __cdecl SoundEngine::CleanUp(void)" (?CleanUp@SoundEngine@@QEAAXXZ)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::Sound::set3DMinMaxDistance(float,float)" (?set3DMinMaxDistance@Sound@FMOD@@QEAA?AW4FMOD_RESULT@@MM@Z) referenced in function "public: bool __cdecl SoundEngine::loadSound(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool,float,float)" (?loadSound@SoundEngine@@QEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NMM@Z)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::ChannelControl::getDSPClock(unsigned __int64 *,unsigned __int64 *)" (?getDSPClock@ChannelControl@FMOD@@QEAA?AW4FMOD_RESULT@@PEA_K0@Z) referenced in function "public: void __cdecl SoundEngine::fadeOutChannel(int,int,float)" (?fadeOutChannel@SoundEngine@@QEAAXHHM@Z)
+SoundEngine.obj : error LNK2019: unresolved external symbol "public: enum FMOD_RESULT __cdecl FMOD::ChannelControl::addFadePoint(unsigned __int64,float)" (?addFadePoint@ChannelControl@FMOD@@QEAA?AW4FMOD_RESULT@@_KM@Z) referenced in function "public: void __cdecl SoundEngine::fadeOutChannel(int,int,float)" (?fadeOutChannel@SoundEngine@@QEAAXHHM@Z)
 Texture.obj : error LNK2019: unresolved external symbol SOIL_load_OGL_texture referenced in function "public: bool __cdecl Texture::load(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?load@Texture@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
 Texture.obj : error LNK2019: unresolved external symbol SOIL_last_result referenced in function "public: bool __cdecl Texture::load(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?load@Texture@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
 Timer.obj : error LNK2019: unresolved external symbol __imp_glutGet referenced in function "public: __cdecl Timer::Timer(void)" (??0Timer@@QEAA@XZ)
-C:\Users\100619082\Desktop\DuelV1.2.9\DuelV1.2.9\Project1\lib\glew32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\100619082\Desktop\DuelV1.2.9\DuelV1.2.9\Project1\lib\SOIL_ext.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\100619082\Desktop\DuelV1.2.9\DuelV1.2.9\Project1\lib\Xinput9_1_0.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\100619082\Desktop\DuelV1.2.9\DuelV1.2.9\Project1\lib\freeglut.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
-C:\Users\100619082\Desktop\DuelV1.2.9\DuelV1.2.9\x64\Debug\Game_Project.exe : fatal error LNK1120: 66 unresolved externals
+C:\Users\natha\Documents\GitHub\Duel\Project1\lib\glew32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\natha\Documents\GitHub\Duel\Project1\lib\SOIL_ext.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\natha\Documents\GitHub\Duel\Project1\lib\fmod_vc.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\natha\Documents\GitHub\Duel\Project1\lib\Xinput9_1_0.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\natha\Documents\GitHub\Duel\Project1\lib\freeglut.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\natha\Documents\GitHub\Duel\x64\Debug\Game_Project.exe : fatal error LNK1120: 87 unresolved externals
