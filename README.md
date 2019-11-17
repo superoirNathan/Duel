@@ -24,5 +24,4 @@ Run in 86 bit instead of 64 bit (caused by fmod api)
    - Jon Waaler
   #### Artists:
    - Jon Ben Oliver
-   - Alex Yerevanian
    - Janarthan Ravikumar
