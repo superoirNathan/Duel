@@ -1,216 +1,68 @@
-﻿  animation.cpp
-  controller.cpp
-C:\Users\natha\Documents\GitHub\Duel\Project1\animation.cpp(10,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\controller.cpp(61,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\controller.cpp(66,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\controller.cpp(180,42): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
-  FrameBufferObject.cpp
-C:\Users\natha\Documents\GitHub\Duel\Project1\controller.cpp(181,44): warning C4244: '=': conversion from 'float' to 'WORD', possible loss of data
-  Game.cpp
-C:\Users\natha\Documents\GitHub\Duel\Project1\FrameBufferObject.cpp(41,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(100,78): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(100,50): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(101,72): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(101,44): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(838,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(844,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(845,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(863,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(867,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(870,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(874,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(876,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(884,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(899,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(903,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(907,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(909,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(917,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1101,50): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1119,61): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1132,61): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1200,35): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1262,104): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1289,99): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1300,31): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1322,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1344,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1362,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1385,35): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1444,31): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1450,31): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1485,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1503,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1508,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1509,31): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1516,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1517,31): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1524,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1525,31): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1569,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1712,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1727,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1743,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1800,31): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1804,31): warning C4018: '<': signed/unsigned mismatch
-  GameObject.cpp
-C:\Users\natha\Documents\GitHub\Duel\Project1\Game.cpp(1812,30): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(159,54): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(191,35): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(191,35): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(191,35): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(191,35): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(191,35): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(196,35): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(196,35): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(196,35): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(196,35): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(196,35): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(228,36): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(228,36): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(228,36): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(228,36): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(228,36): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(233,36): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(233,36): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(233,36): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(233,36): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(233,36): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(271,23): warning C4018: '<': signed/unsigned mismatch
-  HTRLoader.cpp
-C:\Users\natha\Documents\GitHub\Duel\Project1\GameObject.cpp(394,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\HTRLoader.cpp(92,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\HTRLoader.cpp(107,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\HTRLoader.cpp(129,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\HTRLoader.cpp(229,26): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\natha\Documents\GitHub\Duel\Project1\HTRLoader.cpp(355,20): warning C4018: '<': signed/unsigned mismatch
-  tinyxml2.cpp
-  Light.cpp
+﻿  Game.cpp
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(100,78): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(100,50): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(101,72): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(101,44): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(838,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(844,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(845,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(863,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(867,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(870,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(874,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(876,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(884,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(899,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(903,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(907,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(909,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(917,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1101,50): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1119,61): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1132,61): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1200,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1262,104): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1289,99): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1300,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1322,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1344,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1362,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1385,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1444,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1450,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1485,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1503,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1508,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1509,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1516,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1517,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1524,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1525,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1569,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1712,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1727,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1743,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1800,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1804,31): warning C4018: '<': signed/unsigned mismatch
   Main.cpp
-  Material.cpp
-  Mesh.cpp
-C:\Users\natha\Documents\GitHub\Duel\Project1\HTRLoader.cpp(394,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Mesh.cpp(1,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
-  ParticleEmitter.cpp
-C:\Users\natha\Documents\GitHub\Duel\Project1\Mesh.cpp : message : see previous definition of '_CRT_SECURE_NO_WARNINGS'
-C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(125,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(147,38): warning C4244: 'initializing': conversion from 'genType' to 'float', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(147,38): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(147,38): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(147,38): warning C4244:             genType=int
-C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(147,38): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(171,64): warning C4305: 'argument': truncation from 'double' to 'T'
-C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(171,64): warning C4305:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(171,64): warning C4305:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(171,64): warning C4305:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(171,64): warning C4305:         ]
-  PlayerObject.cpp
-C:\Users\natha\Documents\GitHub\Duel\Project1\ParticleEmitter.cpp(259,23): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(47,138): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(47,138): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(47,138): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(47,138): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(47,138): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(48,138): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(48,138): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(48,138): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(48,138): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(48,138): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(53,134): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(53,134): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(53,134): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(53,134): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(53,134): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(54,134): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(54,134): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(54,134): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(54,134): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(54,134): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(61,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(74,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(87,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(87,50): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(87,50): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(87,50): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(87,50): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(88,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(88,50): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(88,50): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(88,50): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(88,50): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(103,51): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(103,51): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(103,51): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(103,51): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(103,51): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(104,51): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(104,51): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(104,51): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(104,51): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(104,51): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(116,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(116,50): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(116,50): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(116,50): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(116,50): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(117,50): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(117,50): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(117,50): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(117,50): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(117,50): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(129,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(149,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(169,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(192,20): warning C4018: '<': signed/unsigned mismatch
-  ShaderProgram.cpp
-  SkinnedGameObject.cpp
-C:\Users\natha\Documents\GitHub\Duel\Project1\PlayerObject.cpp(198,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(36,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(72,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(72,57): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(72,57): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(72,57): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(72,57): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(73,49): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(75,82): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(75,82): warning C4244:         with
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(75,82): warning C4244:         [
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(75,82): warning C4244:             T=float
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(75,82): warning C4244:         ]
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(106,31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(165,31): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(195,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(222,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(298,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(309,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(314,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(336,64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(339,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(354,51): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(357,47): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(359,82): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(398,27): warning C4018: '<': signed/unsigned mismatch
   SoundEngine.cpp
-C:\Users\natha\Documents\GitHub\Duel\Project1\SkinnedGameObject.cpp(404,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(31,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(36,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(41,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(194,77): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(199,75): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(204,76): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(213,77): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(218,75): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(223,76): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(247,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(257,27): warning C4018: '<': signed/unsigned mismatch
-  Texture.cpp
-  Timer.cpp
-C:\Users\natha\Documents\GitHub\Duel\Project1\SoundEngine.cpp(266,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\natha\Documents\GitHub\Duel\Project1\Timer.cpp(5,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\natha\Documents\GitHub\Duel\Project1\Timer.cpp(15,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\Game.cpp(1812,30): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\SoundEngine.cpp(31,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\SoundEngine.cpp(36,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\SoundEngine.cpp(41,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\SoundEngine.cpp(194,77): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\SoundEngine.cpp(199,75): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\SoundEngine.cpp(204,76): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\SoundEngine.cpp(213,77): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\SoundEngine.cpp(218,75): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\SoundEngine.cpp(223,76): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\SoundEngine.cpp(247,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\SoundEngine.cpp(257,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Project1\SoundEngine.cpp(266,27): warning C4018: '<': signed/unsigned mismatch
 LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 1621 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  0 of 1621 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  Project1.vcxproj -> C:\Users\natha\Documents\GitHub\Duel\Release\Game_Project.exe
+  Project1.vcxproj -> C:\Users\Jon Ben\Desktop\Portfolio\Games\UOIT GDW Games\Y2_PrometheusStudio_Duel\Duel-master\Release\Game_Project.exe

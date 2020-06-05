@@ -20,10 +20,10 @@ void FmodErrorCheck(FMOD_RESULT result);
 
 struct Listener
 {
-	FMOD_VECTOR pos = { 0.0f, 0.0f, -1.0f };
-	FMOD_VECTOR forward = { 0.0f, 0.0f, -1.0f };
-	FMOD_VECTOR up = { 0.0f, 1.0f, 0.0f };
-	FMOD_VECTOR vel = { 0.0f, 0.0f, 0.0f };
+	FMOD_VECTOR pos =		{ 0.0f, 0.0f, -1.0f };
+	FMOD_VECTOR forward =	{ 0.0f, 0.0f, -1.0f };	//Jon edit November 12, 2019
+	FMOD_VECTOR up =		{ 0.0f, 1.0f, 0.0f };
+	FMOD_VECTOR vel =		{ 0.0f, 0.0f, 0.0f };
 };
 struct SoundFile
 {
@@ -32,7 +32,7 @@ struct SoundFile
     // sound = default loader (1 per noise)
     FMOD::Sound *sound = NULL;
     // sound pos needed for 3D, vel needed for doppler effects
-    FMOD_VECTOR soundPos = {0.f,0.f,0.f};
+    FMOD_VECTOR soundPos = {0.f, 0.f, 0.f};
     FMOD_VECTOR soundVel = {0.f, 0.f, 0.f};
     // set paused when not in use
     bool setPaused = true;
